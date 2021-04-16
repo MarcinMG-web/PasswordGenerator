@@ -1,38 +1,102 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mainBox{
+  width: 500px;
+  height: 600px;
+  background-color: gray;
+  color: black;
+  border-radius: 25px;
+}
+.grneratePassword{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  width: 300px;
+  height: 100px;
+  background-color: honeydew;
+  color: black;
+  border-radius: 25px;
+  
+}
+.grneratePassword_button{
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-create{
+  width: 100px;
+  height: 50px;
+  background-color: bisque;
+  color: black;
+  outline: none;
+  border: 0;
+  border-radius: 25px;
+}
+
+.seating{
+  /* display: flex; */
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+
+  width: 400px;
+  height: auto;
+  border: 1px, solid, black;
+
+}
+
+.range-slide{
+  position: relative;
+  width: 100%;
+  height: calc(65px - 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin: 30px;
+}
+
+.range-slide::before,
+.range-slide::after{
+  position: absolute;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.range-slide::before{
+  content: attr(data-min);
+  left: 10px;
+}
+
+.range-slide::after{
+  content: attr(data-max);
+  right: 10px;
+}
+
+.range-slider, .lenght-title::after{
+  content: attr(data-length);
+  /* position: absolute; */
+  right: -16px;
+  font-variant-ligatures: tabular-nums;
+  color: #000;
 }
