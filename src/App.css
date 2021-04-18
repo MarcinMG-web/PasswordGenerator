@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,18 +12,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(8px + 2vmin);
+  font-size: calc(6px + 2vmin);
   color: white;
 }
 
-.mainBox{
+.mainBox {
   width: 500px;
   height: 600px;
   background-color: gray;
   color: black;
   border-radius: 25px;
 }
-.grneratePassword{
+.grneratePassword {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,13 +35,12 @@
   background-color: honeydew;
   color: black;
   border-radius: 25px;
-  
 }
-.grneratePassword_button{
+.grneratePassword_button {
   margin-top: 10px;
 }
 
-.btn-create{
+.btn-create {
   width: 100px;
   height: 50px;
   background-color: bisque;
@@ -51,8 +50,7 @@
   border-radius: 25px;
 }
 
-.seating{
-  /* display: flex; */
+.seating {
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
@@ -61,42 +59,39 @@
   width: 400px;
   height: auto;
   border: 1px, solid, black;
-
+  font-size: calc(8px + 0.5em);
 }
 
-.range-slide{
+.range-slider {
   position: relative;
   width: 100%;
-  height: calc(65px - 10px);
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  margin: 30px;
+  flex-direction: column;
 }
 
-.range-slide::before,
-.range-slide::after{
+.range-slider::before,
+.range-slider::after {
   position: absolute;
   color: #000;
   font-size: 0.9rem;
 }
 
-.range-slide::before{
+.range-slider::before {
   content: attr(data-min);
   left: 10px;
 }
 
-.range-slide::after{
+.range-slider::after {
   content: attr(data-max);
   right: 10px;
 }
 
-.range-slider, .lenght-title::after{
-  content: attr(data-length);
-  /* position: absolute; */
-  right: -16px;
-  font-variant-ligatures: tabular-nums;
-  color: #000;
+.range-slider-label {
+  margin: 10px;
+}
+
+.range-slider-result {
+  font-size: 15px;
 }

@@ -20,9 +20,7 @@ const Box = () => {
   };
 
   const settingPassword = (e) => {
-
     if (includeLetters || includeNumbers || includeSymbol) {
-      
       let characterList = [];
       if (includeLetters) {
         const tabLetters = Array(26)
@@ -44,7 +42,7 @@ const Box = () => {
       }
       return setPassword(createPassword(characterList));
     } else {
-      return setPassword('');
+      return setPassword('Set the opportunities');
     }
   };
 
@@ -72,42 +70,39 @@ const Box = () => {
 
       <div className='seating'>
         <div className='range-slider' data-min='8' data-max='32'>
-          <label>length password</label> <br />
+          <label className='range-slider-label'>Length password:</label>
           <input
             type='range'
-            min='1'
-            max='30'
+            min='8'
+            max='32'
             value={passwordLenght}
             onChange={chandleChangePasswordLenght}
           />
-          <div className='resultRange'>
-            {passwordLenght}
-            <br />
-          </div>
-          <div>
-            <label>include Letter:</label>
-            <input
-              type='checkbox'
-              checked={includeLetters}
-              onChange={(e) => setIncludeLetters(e.target.checked)}
-            />
-          </div>
-          <div>
-            <label>include Numbers:</label>
-            <input
-              type='checkbox'
-              checked={includeNumbers}
-              onChange={(e) => setIncludeNumbers(e.target.checked)}
-            />
-          </div>
-          <div>
-            <label>include Symbol:</label>
-            <input
-              type='checkbox'
-              checked={includeSymbol}
-              onChange={(e) => setIncludeSymbols(e.target.checked)}
-            />
-          </div>
+          <div className='range-slider-result'>{passwordLenght}</div>
+        </div>
+        <div>
+          <label>include Letter:</label>
+          <input
+            type='checkbox'
+            checked={includeLetters}
+            onChange={(e) => setIncludeLetters(e.target.checked)}
+          />
+        </div>
+        <div>
+          <label>include Numbers:</label>
+          <input
+            type='checkbox'
+            checked={includeNumbers}
+            onChange={(e) => setIncludeNumbers(e.target.checked)}
+          />
+        </div>
+        <div>
+          <label>include Symbol:</label>
+          <input
+            type='checkbox'
+            checked={includeSymbol}
+            onChange={(e) => setIncludeSymbols(e.target.checked)}
+          />
         </div>
       </div>
     </div>
