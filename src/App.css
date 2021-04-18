@@ -30,7 +30,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
-  width: 300px;
+  width: 90%;
   height: 100px;
   background-color: honeydew;
   color: black;
@@ -94,4 +94,26 @@
 
 .range-slider-result {
   font-size: 15px;
+}
+
+.checkBox-container{
+  width: 100%;
+  height: 45px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  border: 1px solid;
+
+  padding: 10px;
+  margin: 10px;
+}
+.checkBox-label{
+  font-size: 15px;
+}
+.checkBox-input{
+  
 }

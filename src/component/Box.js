@@ -75,28 +75,33 @@ const Box = () => {
           />
           <div className='range-slider-result'>{passwordLenght}</div>
         </div>
-        <div>
-          <label>include Letters:</label>
+
+        <div className ='checkBox-container'>
+          <label className ='checkBox-label'>Include Letters:</label>
           <input
             type='checkbox'
             checked={includeLetters}
             onChange={(e) => setIncludeLetters(e.target.checked)}
+            className ='checkBox-input'
           />
         </div>
-        <div>
-          <label>include Numbers:</label>
+
+        <div className ='checkBox-container'>
+          <label className ='checkBox-label'>Include Numbers:</label>
           <input
             type='checkbox'
             checked={includeNumbers}
             onChange={(e) => setIncludeNumbers(e.target.checked)}
+            className ='checkBox-input'
           />
         </div>
-        <div>
-          <label>include Symbol:</label>
+        <div className ='checkBox-container'>
+          <label className ='checkBox-label'>Include Symbol:</label>
           <input
             type='checkbox'
             checked={includeSymbol}
             onChange={(e) => setIncludeSymbols(e.target.checked)}
+            className ='checkBox-input'
           />
         </div>
       </div>
