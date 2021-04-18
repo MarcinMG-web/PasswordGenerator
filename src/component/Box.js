@@ -1,54 +1,113 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Box = () => {
   const [password, setPassword] = useState('');
-  const [radioInput, setRadioInput] = useState(0);
 
-  const lenghtPassword = (e) => {
-    setRadioInput( e.target.value );
-    // console.log(radioInput);
+  const [passwordLenght, setPasswordLenght] = useState(12);
+  const [includeLetters, setIncludeLetters] = useState(false);
+  const [includeNumbers, setIncludeNumbers] = useState(false);
+  const [includeSymbol, setIncludeSymbols] = useState(false);
+
+  useEffect(() => {
+    const ele = document.querySelector('.buble');
+    if (ele) {
+      ele.style.left = `${Number(passwordLenght / 4)}px`;
+    }
+  });
+
+  const settingPassword = (e) => {
+    console.log(includeLetters, includeNumbers, includeSymbol)
+  
+    let characterList = []
+      if(includeLetters){
+        const tabLetters = Array(26)
+        .fill(0)
+        .map((el, i) => String.fromCharCode(97 + i));
+        characterList.push(...tabLetters) 
+
+      }
+      if(includeNumbers){
+        const tabNumbers = Array(10)
+        .fill(0)
+        .map((el, i) => i);
+       characterList.push(...tabNumbers) 
+       
+      }
+      if(includeSymbol){
+        const specialChar = Array(15)
+        .fill(0)
+        .map((el, i) => String.fromCharCode(33 + i));
+        characterList.push(...specialChar)
+      }
+    return console.log(setPassword(createPassword(characterList)))
+
   };
 
-  const createPassword = (radioInput) => {
-
-  
-    const tabLetters = Array(26)
-      .fill(0)
-      .map((el, i) => String.fromCharCode(97 + i));
-
-    const tabNumbers = Array(10)
-      .fill(0)
-      .map((el, i) => i);
-    const specialChar = Array(15)
-      .fill(0)
-      .map((el, i) => String.fromCharCode(33 + i));
-
-
-    const tab = [...tabLetters, ...tabNumbers, ...specialChar];
+  const createPassword = (characterList) => {
+      const min = 0;
+    const max = characterList.length - 1;
 
     let password = '';
-    const min = 0;
-    const max = tab.length - 1;
     for (let i = 0; i < 12; i++) {
       const rand = Math.floor(Math.random() * (max - min + 1) + min);
-      password += tab[rand];
+      password += characterList[rand];
     }
+    return password
 
-    console.log('setPassword', password);
-    return setPassword(password);
-  };
+  }
 
   return (
     <div className='mainBox'>
       <div className='grneratePassword'> {password}</div>
 
       <div className='grneratePassword_button'>
-        <button className='btn-create' onClick={createPassword}>
+        <button className='btn-create' onClick={settingPassword}>
           Create
         </button>
       </div>
 
-     
+      <div className='seating'>
+        <div className='range-slider' data-min='8' data-max='32'>
+          <label>length password</label> <br />
+          <input
+            type='range'
+            min='1'
+            max='30'
+            value={passwordLenght}
+            onChange={({ target: { value: radius } }) => {
+              setPasswordLenght(radius);
+            }}
+          />
+          <div className='buble'>
+            {passwordLenght}
+            <br />
+          </div>
+          <div>
+            <label>include Letter:</label>
+            <input
+              type='checkbox'
+              checked={includeLetters}
+              onChange={(e) => setIncludeLetters(e.target.checked)}
+            />
+          </div>
+          <div>
+            <label>include Numbers:</label>
+            <input
+              type='checkbox'
+              checked={includeNumbers}
+              onChange={(e) => setIncludeNumbers(e.target.checked)}
+            />
+          </div>
+          <div>
+            <label>include Symbol:</label>
+            <input
+              type='checkbox'
+              checked={includeSymbol}
+              onChange={(e) => setIncludeSymbols(e.target.checked)}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
