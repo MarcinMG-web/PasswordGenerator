@@ -96,7 +96,7 @@ const Box = () => {
           />
         </div>
         <div className ='checkBox-container'>
-          <label className ='checkBox-label'>Include Symbol:</label>
+          <label className ='checkBox-label'>Include Symbols:</label>
           <input
             type='checkbox'
             checked={includeSymbol}
