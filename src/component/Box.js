@@ -62,11 +62,6 @@ const Box = () => {
     <div className='mainBox'>
       <div className='grneratePassword'> {password}</div>
 
-      <div className='grneratePassword_button'>
-        <button className='btn-create' onClick={settingPassword}>
-          Create
-        </button>
-      </div>
 
       <div className='seating'>
         <div className='range-slider' data-min='8' data-max='32'>
@@ -81,7 +76,7 @@ const Box = () => {
           <div className='range-slider-result'>{passwordLenght}</div>
         </div>
         <div>
-          <label>include Letter:</label>
+          <label>include Letters:</label>
           <input
             type='checkbox'
             checked={includeLetters}
@@ -104,6 +99,11 @@ const Box = () => {
             onChange={(e) => setIncludeSymbols(e.target.checked)}
           />
         </div>
+      </div>
+      <div className='grneratePassword_button'>
+        <button className='btn-create' onClick={settingPassword}>
+          Create
+        </button>
       </div>
     </div>
   );
