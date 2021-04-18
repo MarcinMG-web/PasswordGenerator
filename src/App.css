@@ -46,7 +46,8 @@
   width: 90%;
   height: 100px;
 
-  background-color: honeydew;
+  background-color: #ccc;
+  border: 1px #43b472 solid;
   border-radius: 25px;
 }
 
@@ -60,14 +61,16 @@
 
   color: black;
   outline: none;
-  border: 1px #2196f3;
+  border: 1px #43b472 solid;
   border-radius: 25px;
   cursor: pointer;
   font-size: 20px;
   margin-top: 10px;
+  background-color: #32a472;
+  font-weight: 500;
 }
 .btn-create:hover {
-  background-color: #2196f3;
+  background-color: #21a361;
   color: #000;
 }
 
@@ -176,11 +179,11 @@
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #43b472;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #43b472;
 }
 
 input:checked + .slider:before {

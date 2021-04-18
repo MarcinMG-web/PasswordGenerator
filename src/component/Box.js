@@ -60,7 +60,7 @@ const Box = () => {
 
   return (
     <div className='mainBox'>
-      <div className='grneratePassword'> {password}</div>
+      <div className='grneratePassword'>{password}</div>
 
       <div className='seating'>
         <div className='range-slider' data-min='8' data-max='32'>
