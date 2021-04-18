@@ -62,7 +62,6 @@ const Box = () => {
     <div className='mainBox'>
       <div className='grneratePassword'> {password}</div>
 
-
       <div className='seating'>
         <div className='range-slider' data-min='8' data-max='32'>
           <label className='range-slider-label'>Length password:</label>
@@ -76,33 +75,42 @@ const Box = () => {
           <div className='range-slider-result'>{passwordLenght}</div>
         </div>
 
-        <div className ='checkBox-container'>
-          <label className ='checkBox-label'>Include Letters:</label>
-          <input
-            type='checkbox'
-            checked={includeLetters}
-            onChange={(e) => setIncludeLetters(e.target.checked)}
-            className ='checkBox-input'
-          />
+        <div className='checkBox-container'>
+          <label className='checkBox-label'>Include Letters:</label>
+          <label className='switch'>
+            <input
+              type='checkbox'
+              checked={includeLetters}
+              onChange={(e) => setIncludeLetters(e.target.checked)}
+              className='checkBox-input'
+            />
+            <span className='slider round'></span>
+          </label>
         </div>
 
-        <div className ='checkBox-container'>
-          <label className ='checkBox-label'>Include Numbers:</label>
-          <input
-            type='checkbox'
-            checked={includeNumbers}
-            onChange={(e) => setIncludeNumbers(e.target.checked)}
-            className ='checkBox-input'
-          />
+        <div className='checkBox-container'>
+          <label className='checkBox-label'>Include Numbers:</label>
+          <label className='switch'>
+            <input
+              type='checkbox'
+              checked={includeNumbers}
+              onChange={(e) => setIncludeNumbers(e.target.checked)}
+              className='checkBox-input'
+            />
+            <span className='slider round'></span>
+          </label>
         </div>
-        <div className ='checkBox-container'>
-          <label className ='checkBox-label'>Include Symbols:</label>
-          <input
-            type='checkbox'
-            checked={includeSymbol}
-            onChange={(e) => setIncludeSymbols(e.target.checked)}
-            className ='checkBox-input'
-          />
+        <div className='checkBox-container'>
+          <label className='checkBox-label'>Include Symbols:</label>
+          <label className='switch'>
+            <input
+              type='checkbox'
+              checked={includeSymbol}
+              onChange={(e) => setIncludeSymbols(e.target.checked)}
+              className='checkBox-input'
+            />
+            <span className='slider round'></span>
+          </label>
         </div>
       </div>
       <div className='grneratePassword_button'>
