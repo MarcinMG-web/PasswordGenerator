@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+  font-family: 'Rokkitt', serif;
+  font-size: 25px;
 }
 
 .App {
@@ -12,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(6px + 2vmin);
+
   color: white;
 }
 
@@ -41,13 +45,15 @@
 }
 
 .btn-create {
-  width: 100px;
+  width: 200px;
   height: 50px;
-  background-color: bisque;
+  background-color:  rgb(214, 23, 23);
   color: black;
   outline: none;
   border: 0;
   border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .seating {
@@ -59,7 +65,7 @@
   width: 400px;
   height: auto;
   border: 1px, solid, black;
-  font-size: calc(8px + 0.5em);
+  font-size: 24px;
 }
 
 .range-slider {
@@ -93,7 +99,7 @@
 }
 
 .range-slider-result {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .checkBox-container{
@@ -112,7 +118,7 @@
   margin: 10px;
 }
 .checkBox-label{
-  font-size: 15px;
+  font-size: 20px;
 }
 .checkBox-input{
   
