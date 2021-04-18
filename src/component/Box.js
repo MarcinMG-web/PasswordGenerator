@@ -9,52 +9,56 @@ const Box = () => {
   const [includeSymbol, setIncludeSymbols] = useState(false);
 
   useEffect(() => {
-    const ele = document.querySelector('.buble');
-    if (ele) {
-      ele.style.left = `${Number(passwordLenght / 4)}px`;
+    const el = document.querySelector('.resultRange');
+    if (el) {
+      el.style.left = `${Number(passwordLenght / 4)}px`;
     }
   });
 
+  const chandleChangePasswordLenght = (e) => {
+    setPasswordLenght(e.target.value);
+  };
+
   const settingPassword = (e) => {
-    console.log(includeLetters, includeNumbers, includeSymbol)
-  
-    let characterList = []
-      if(includeLetters){
+
+    if (includeLetters || includeNumbers || includeSymbol) {
+      
+      let characterList = [];
+      if (includeLetters) {
         const tabLetters = Array(26)
-        .fill(0)
-        .map((el, i) => String.fromCharCode(97 + i));
-        characterList.push(...tabLetters) 
-
+          .fill(0)
+          .map((el, i) => String.fromCharCode(97 + i));
+        characterList.push(...tabLetters);
       }
-      if(includeNumbers){
+      if (includeNumbers) {
         const tabNumbers = Array(10)
-        .fill(0)
-        .map((el, i) => i);
-       characterList.push(...tabNumbers) 
-       
+          .fill(0)
+          .map((el, i) => i);
+        characterList.push(...tabNumbers);
       }
-      if(includeSymbol){
+      if (includeSymbol) {
         const specialChar = Array(15)
-        .fill(0)
-        .map((el, i) => String.fromCharCode(33 + i));
-        characterList.push(...specialChar)
+          .fill(0)
+          .map((el, i) => String.fromCharCode(33 + i));
+        characterList.push(...specialChar);
       }
-    return console.log(setPassword(createPassword(characterList)))
-
+      return setPassword(createPassword(characterList));
+    } else {
+      return setPassword('');
+    }
   };
 
   const createPassword = (characterList) => {
-      const min = 0;
+    const min = 0;
     const max = characterList.length - 1;
 
     let password = '';
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < passwordLenght; i++) {
       const rand = Math.floor(Math.random() * (max - min + 1) + min);
       password += characterList[rand];
     }
-    return password
-
-  }
+    return password;
+  };
 
   return (
     <div className='mainBox'>
@@ -74,11 +78,9 @@ const Box = () => {
             min='1'
             max='30'
             value={passwordLenght}
-            onChange={({ target: { value: radius } }) => {
-              setPasswordLenght(radius);
-            }}
+            onChange={chandleChangePasswordLenght}
           />
-          <div className='buble'>
+          <div className='resultRange'>
             {passwordLenght}
             <br />
           </div>
