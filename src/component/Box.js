@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const Box = () => {
   const [password, setPassword] = useState('');
 
-  const [passwordLenght, setPasswordLenght] = useState(12);
+  const [passwordLength, setPasswordLength] = useState(12);
   const [includeLetters, setIncludeLetters] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
   const [includeSymbol, setIncludeSymbols] = useState(false);
 
-  useEffect(() => {
-    const el = document.querySelector('.resultRange');
-    if (el) {
-      el.style.left = `${Number(passwordLenght / 4)}px`;
-    }
-  });
-
-  const chandleChangePasswordLenght = (e) => {
-    setPasswordLenght(e.target.value);
+  const chandlerChangePasswordLength = (e) => {
+    setPasswordLength(e.target.value);
   };
 
-  const settingPassword = (e) => {
+  const settingPassword = () => {
     if (includeLetters || includeNumbers || includeSymbol) {
       let characterList = [];
       if (includeLetters) {
@@ -51,7 +44,7 @@ const Box = () => {
     const max = characterList.length - 1;
 
     let password = '';
-    for (let i = 0; i < passwordLenght; i++) {
+    for (let i = 0; i < passwordLength; i++) {
       const rand = Math.floor(Math.random() * (max - min + 1) + min);
       password += characterList[rand];
     }
@@ -60,7 +53,7 @@ const Box = () => {
 
   return (
     <div className='mainBox'>
-      <div className='grneratePassword'>{password}</div>
+      <div className='generatePassword'>{password}</div>
 
       <div className='seating'>
         <div className='range-slider' data-min='8' data-max='32'>
@@ -69,10 +62,10 @@ const Box = () => {
             type='range'
             min='8'
             max='32'
-            value={passwordLenght}
-            onChange={chandleChangePasswordLenght}
+            value={passwordLength}
+            onChange={chandlerChangePasswordLength}
           />
-          <div className='range-slider-result'>{passwordLenght}</div>
+          <div className='range-slider-result'>{passwordLength}</div>
         </div>
 
         <div className='checkBox-container'>
@@ -113,7 +106,7 @@ const Box = () => {
           </label>
         </div>
       </div>
-      <div className='grneratePassword_button'>
+      <div className='generatePassword_button'>
         <button className='btn-create' onClick={settingPassword}>
           Create
         </button>
