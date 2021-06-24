@@ -1,0 +1,33 @@
+.range-slider {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.range-slider::before,
+.range-slider::after {
+  position: absolute;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.range-slider::before {
+  content: attr(data-min);
+  left: 10px;
+}
+
+.range-slider::after {
+  content: attr(data-max);
+  right: 10px;
+}
+
+.range-slider-label {
+  margin: 10px;
+}
+
+.range-slider-result {
+  font-size: 20px;
+}

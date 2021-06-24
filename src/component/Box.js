@@ -52,10 +52,10 @@ const Box = () => {
   };
 
   return (
-    <div className='mainBox'>
-      <div className='generatePassword'>{password}</div>
+    <div className='mainContainer'>
+      <div className='mainContainer_generatePassword'>{password}</div>
 
-      <div className='seating'>
+      <div className='mainContainer_seating'>
         <div className='range-slider' data-min='8' data-max='32'>
           <label className='range-slider-label'>Length password:</label>
           <input
@@ -68,9 +68,9 @@ const Box = () => {
           <div className='range-slider-result'>{passwordLength}</div>
         </div>
 
-        <div className='checkBox-container'>
-          <label className='checkBox-label'>Include Letters:</label>
-          <label className='switch'>
+        <div className='checkBoxContainer'>
+          <label className='checkBoxContainer_label'>Include Letters:</label>
+          <label className='checkBoxContainer_label-switch'>
             <input
               type='checkbox'
               checked={includeLetters}
@@ -81,9 +81,9 @@ const Box = () => {
           </label>
         </div>
 
-        <div className='checkBox-container'>
-          <label className='checkBox-label'>Include Numbers:</label>
-          <label className='switch'>
+        <div className='checkBoxContainer'>
+          <label className='checkBoxContainer_label'>Include Numbers:</label>
+          <label className='checkBoxContainer_label-switch'>
             <input
               type='checkbox'
               checked={includeNumbers}
@@ -93,9 +93,9 @@ const Box = () => {
             <span className='slider round'></span>
           </label>
         </div>
-        <div className='checkBox-container'>
-          <label className='checkBox-label'>Include Symbols:</label>
-          <label className='switch'>
+        <div className='checkBoxContainer'>
+          <label className='checkBoxContainer_label'>Include Symbols:</label>
+          <label className='checkBoxContainer_label-switch'>
             <input
               type='checkbox'
               checked={includeSymbol}
@@ -105,11 +105,11 @@ const Box = () => {
             <span className='slider round'></span>
           </label>
         </div>
-      </div>
-      <div className='generatePassword_button'>
-        <button className='btn-create' onClick={settingPassword}>
-          Create
-        </button>
+        <div className='mainContainer_button'>
+          <button className='btn-create' onClick={settingPassword}>
+            Create
+          </button>
+        </div>
       </div>
     </div>
   );

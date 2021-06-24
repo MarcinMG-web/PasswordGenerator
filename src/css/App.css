@@ -1,97 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Rokkitt', serif;
-  font-size: 25px;
-}
-
-.App {
-  min-width: 500px;
-  height: 100vh;
-  min-height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
-  background-color: #282c34;
-  color: #fff;
-}
-
-.app_header {
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap");
+.Header {
   margin: 20px;
   font-weight: 600;
   font-size: 45px;
 }
 
-.mainBox {
+.mainContainer {
   width: 500px;
   height: 500px;
   background-color: gray;
   color: black;
   border-radius: 25px;
 }
-
-.generatePassword {
+.mainContainer_generatePassword {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
-
   width: 90%;
   height: 100px;
-
   background-color: #ccc;
   border: 1px #43b472 solid;
   border-radius: 25px;
 }
-
-.generatePassword_button {
-  margin-top: 20px;
-}
-
-.btn-create {
-  width: 200px;
-  height: 30px;
-
-  color: black;
-  outline: none;
-  border: 1px #43b472 solid;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 20px;
-  margin-top: 10px;
-  background-color: #32a472;
-  font-weight: 500;
-}
-.btn-create:hover {
-  background-color: #21a361;
-  color: #000;
-}
-
-.seating {
+.mainContainer_seating {
   flex-direction: row;
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
-
   width: 400px;
   height: auto;
   border: 1px, solid, black;
   font-size: 24px;
 }
+.mainContainer_button {
+  margin-top: 20px;
+}
+
+.checkBoxContainer {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: 1px solid;
+  padding: 10px;
+  margin: 10px;
+}
+.checkBoxContainer_label {
+  font-size: 20px;
+  /* The switch - the box around the slider */
+  /* Hide default checkbox */
+}
+.checkBoxContainer_label-switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+}
+.checkBoxContainer_label-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
 .range-slider {
   position: relative;
   width: 100%;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -122,39 +100,6 @@
   font-size: 20px;
 }
 
-.checkBox-container {
-  width: 100%;
-  height: 45px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-
-  border: 1px solid;
-
-  padding: 10px;
-  margin: 10px;
-}
-.checkBox-label {
-  font-size: 20px;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  width: 50px;
-  height: 24px;
-}
-
-/* Hide default checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
 /* The slider */
 .slider {
   position: absolute;
@@ -170,7 +115,7 @@
 
 .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 16px;
   width: 16px;
   left: 4px;
@@ -201,4 +146,44 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.btn-create {
+  width: 200px;
+  height: 30px;
+  color: black;
+  outline: none;
+  border: 1px #43b472 solid;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: #32a472;
+  font-weight: 500;
+}
+
+.btn-create:hover {
+  background-color: #21a361;
+  color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rokkitt", serif;
+  font-size: 25px;
+}
+
+.App {
+  min-width: 500px;
+  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+  color: #fff;
 }

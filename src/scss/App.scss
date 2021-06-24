@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap');
+
+@import './Header.scss';
+@import './Box.scss';
+@import './rangeSlider';
+@import './inputCheckbox';
+@import './buttons';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rokkitt', serif;
+  font-size: 25px;
+}
+
+.App {
+  min-width: 500px;
+  height: 100vh;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #282c34;
+  color: #fff;
+}

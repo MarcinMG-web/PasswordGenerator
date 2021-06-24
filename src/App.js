@@ -1,4 +1,4 @@
-import './App.css';
+import './css/App.css'
 import Header from './component/Header';
 import Box from './component/Box';
 

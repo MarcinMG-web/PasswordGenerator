@@ -1,0 +1,18 @@
+.btn-create {
+  width: 200px;
+  height: 30px;
+
+  color: black;
+  outline: none;
+  border: 1px #43b472 solid;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: #32a472;
+  font-weight: 500;
+}
+.btn-create:hover {
+  background-color: #21a361;
+  color: #000;
+}
