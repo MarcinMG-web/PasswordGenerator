@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+
+import { addPassword } from '../redux/password/passwordActions';
+
 const Box = () => {
   const [password, setPassword] = useState('');
-  const [passwordName , setPasswordName] = useState('')
+  const [passwordName, setPasswordName] = useState('');
 
   const [passwordLength, setPasswordLength] = useState(22);
   const [includeLetters, setIncludeLetters] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
   const [includeSymbol, setIncludeSymbols] = useState(false);
+
+  const dispatch = useDispatch();
 
   const chandlerChangePasswordLength = (e) => {
     setPasswordLength(e.target.value);
@@ -51,6 +57,17 @@ const Box = () => {
       password += characterList[rand];
     }
     return password;
+  };
+
+  const onClickAddPassword = () => {
+
+    dispatch(
+      addPassword({
+        passwordName: passwordName,
+        password: password,
+        id: Date.now(),
+      })
+    );
   };
 
   return (
@@ -122,12 +139,17 @@ const Box = () => {
             />
           </div>
           <div className='mainContainer_savePassword-password'>
-            Your generated password: <span style={{color: '#fff', borderBottom: 'red'}}>{password}</span>
+            Your generated password:
+            <span style={{ color: '#fff', borderBottom: 'red' }}>
+              {password}
+            </span>
           </div>
         </div>
 
         <div className='mainContainer_button'>
-          <button className='btn-savePassword'>Save password</button>
+          <button className='btn-savePassword' onClick={onClickAddPassword}>
+            Save password
+          </button>
           <button className='btn-create' onClick={settingPassword}>
             Create
           </button>

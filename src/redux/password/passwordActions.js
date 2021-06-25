@@ -1,6 +1,6 @@
 import {ADD_PASSWORD} from './passwordTypes'
 
-export const actionName = (payload) => ({
+export const addPassword = (payload) => ({
   type: ADD_PASSWORD,
   payload: payload,
 });

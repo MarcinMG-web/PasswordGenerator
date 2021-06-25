@@ -1,22 +1,20 @@
-import { ADD_PASSWORD } from './passwordTypes'
+import { ADD_PASSWORD } from './passwordTypes';
 
 const initialState = {
-    savedPasswords: []
-}
+  savedPasswords: [],
+};
 
 const passwordReducer = (state = initialState, action) => {
-    switch (action.type) {
+  switch (action.type) {
+    case ADD_PASSWORD:
+      return {
+        ...state,
+        savedPasswords: [...state.savedPasswords, action.payload],
+      };
 
-        case ADD_PASSWORD:
-            return {
-                ...state,
-                savedPasswords: action.payload
-            };
-
-        default:
-            return state;
-    }
-}
-
+    default:
+      return state;
+  }
+};
 
 export default passwordReducer;
