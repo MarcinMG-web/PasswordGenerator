@@ -66,7 +66,7 @@ const Box = () => {
             value={passwordLength}
             onChange={chandlerChangePasswordLength}
           />
-          <div className='range-slider-result'>{passwordLength}</div>
+          <div className='range-slider-result' style={{color:'red'}}>{passwordLength}</div>
         </div>
 
         <div className='checkBoxContainer'>
@@ -94,6 +94,7 @@ const Box = () => {
             <span className='slider round'></span>
           </label>
         </div>
+
         <div className='checkBoxContainer'>
           <label className='checkBoxContainer_label'>Include Symbols:</label>
           <label className='checkBoxContainer_label-switch'>
@@ -106,6 +107,7 @@ const Box = () => {
             <span className='slider round'></span>
           </label>
         </div>
+        
         <div className='mainContainer_button'>
           <button className='btn-savePassword'>Save password</button>
           <button className='btn-create' onClick={settingPassword}>

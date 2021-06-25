@@ -1,8 +1,8 @@
 .mainContainer {
   width: 500px;
   height: 525px;
-  background-color: gray;
-  color: black;
+  background-color: inherit;
+  color: #fff;
   border-radius: 25px;
   padding: 5px;
 
@@ -18,6 +18,7 @@
     width: 90%;
     height: 100px;
 
+    color: #000;
     background-color: #ccc;
     border: 1px #43b472 solid;
     border-radius: 25px;
@@ -25,11 +26,13 @@
 
   &_seating {
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
-
-    width: 400px;
+    
     height: auto;
     border: 1px, solid, black;
     font-size: 24px;
@@ -46,7 +49,6 @@
 }
 
 .checkBoxContainer {
-  width: 100%;
   height: 45px;
 
   display: flex;
@@ -54,6 +56,8 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
   border: 1px solid;
 
