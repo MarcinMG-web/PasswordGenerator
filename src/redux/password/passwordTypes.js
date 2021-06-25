@@ -1,0 +1,1 @@
+export const ADD_PASSWORD = 'ADD_PASSWORD';
