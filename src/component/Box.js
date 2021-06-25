@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Box = () => {
   const [password, setPassword] = useState('');
+  const [passwordName , setPasswordName] = useState('')
 
-  const [passwordLength, setPasswordLength] = useState(12);
+  const [passwordLength, setPasswordLength] = useState(22);
   const [includeLetters, setIncludeLetters] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
   const [includeSymbol, setIncludeSymbols] = useState(false);
@@ -66,7 +67,9 @@ const Box = () => {
             value={passwordLength}
             onChange={chandlerChangePasswordLength}
           />
-          <div className='range-slider-result' style={{color:'red'}}>{passwordLength}</div>
+          <div className='range-slider-result' style={{ color: 'red' }}>
+            {passwordLength}
+          </div>
         </div>
 
         <div className='checkBoxContainer'>
@@ -107,7 +110,22 @@ const Box = () => {
             <span className='slider round'></span>
           </label>
         </div>
-        
+
+        <div className='mainContainer_savePassword'>
+          <div className='mainContainer_savePassword-name'>
+            Your name password: {passwordName}
+            <input
+              type='text'
+              className='textInput'
+              value={passwordName}
+              onChange={(e) => setPasswordName(e.target.value)}
+            />
+          </div>
+          <div className='mainContainer_savePassword-password'>
+            Your generated password: <span style={{color: '#fff', borderBottom: 'red'}}>{password}</span>
+          </div>
+        </div>
+
         <div className='mainContainer_button'>
           <button className='btn-savePassword'>Save password</button>
           <button className='btn-create' onClick={settingPassword}>

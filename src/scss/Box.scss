@@ -4,7 +4,6 @@
   background-color: inherit;
   color: #fff;
   border-radius: 25px;
-  padding: 5px;
 
   &_generatePassword {
     display: flex;
@@ -12,7 +11,7 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25px;
+    margin-top: 10px;
     padding: 5px;
 
     width: 90%;
@@ -37,6 +36,22 @@
     border: 1px, solid, black;
     font-size: 24px;
   }
+
+  &_savePassword{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    
+    &-name{
+      color: green;
+      padding: 5px;
+    }
+    &-password{
+      color: red;
+      padding: 5px;
+    }
+  }
+
   &_button {
     display: flex;
     flex-direction: row;
@@ -80,3 +95,5 @@
     }
   }
 }
+
+
