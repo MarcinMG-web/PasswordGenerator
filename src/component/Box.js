@@ -107,10 +107,13 @@ const Box = () => {
           </label>
         </div>
         <div className='mainContainer_button'>
+          <button className='btn-savePassword'>Save password</button>
           <button className='btn-create' onClick={settingPassword}>
             Create
           </button>
-          <Link to='./SavedPasswords' className='btn-savePassword'> Move to the save password</Link>
+          <Link to='./SavedPasswords' className='btn-tableSavePassword'>
+            Move to the save password
+          </Link>
         </div>
       </div>
     </div>

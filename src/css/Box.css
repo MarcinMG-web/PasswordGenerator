@@ -1,9 +1,10 @@
 .mainContainer {
   width: 500px;
-  height: 500px;
+  height: 525px;
   background-color: gray;
   color: black;
   border-radius: 25px;
+  padding: 5px;
 }
 .mainContainer_generatePassword {
   display: flex;
@@ -12,6 +13,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
+  padding: 5px;
   width: 90%;
   height: 100px;
   background-color: #ccc;
@@ -29,7 +31,12 @@
   font-size: 24px;
 }
 .mainContainer_button {
+  display: flex;
+  flex-direction: row;
   margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .checkBoxContainer {

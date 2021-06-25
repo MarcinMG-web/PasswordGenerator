@@ -1,19 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap");
-.btn, .btn-backHome, .btn-savePassword, .btn-create {
-  width: 100px;
-  height: 45px;
+.btn, .btn-backHome, .btn-tableSavePassword, .btn-savePassword, .btn-create {
   color: #fff;
   background-color: inherit;
   outline: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
-  margin-top: 10px;
+  margin: 5px;
   font-weight: 500;
 }
 
 .btn-create {
   border: 1px #43b472 solid;
+  width: 100px;
 }
 .btn-create:hover {
   background-color: #21a361;
@@ -21,11 +20,19 @@
 }
 
 .btn-savePassword {
+  border: 1px #43b4ae solid;
+}
+.btn-savePassword:hover {
+  background-color: #43b4ae;
+  color: #000;
+}
+
+.btn-tableSavePassword {
   border: 1px #d13131 solid;
   text-decoration: none;
   padding: 10px;
 }
-.btn-savePassword:hover {
+.btn-tableSavePassword:hover {
   background-color: #d13131;
   color: #000;
 }
@@ -129,10 +136,11 @@ input:checked + .slider:before {
 
 .mainContainer {
   width: 500px;
-  height: 500px;
+  height: 525px;
   background-color: gray;
   color: black;
   border-radius: 25px;
+  padding: 5px;
 }
 .mainContainer_generatePassword {
   display: flex;
@@ -141,6 +149,7 @@ input:checked + .slider:before {
   margin-left: auto;
   margin-right: auto;
   margin-top: 25px;
+  padding: 5px;
   width: 90%;
   height: 100px;
   background-color: #ccc;
@@ -158,7 +167,12 @@ input:checked + .slider:before {
   font-size: 24px;
 }
 .mainContainer_button {
+  display: flex;
+  flex-direction: row;
   margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .checkBoxContainer {
@@ -208,15 +222,13 @@ input:checked + .slider:before {
   font-size: 25px;
 }
 
-.App {
-  min-width: 500px;
-  height: 100vh;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+body {
+  font-family: "Rokkitt", serif;
   background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: calc(10px + 2vmin);
   color: #fff;
 }

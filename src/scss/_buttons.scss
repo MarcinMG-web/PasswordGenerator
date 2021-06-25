@@ -1,6 +1,6 @@
 .btn {
-  width: 100px;
-  height: 45px;
+  // width: 100px;
+  // height: 45px;
 
   color: #fff;
   background-color: inherit;
@@ -9,13 +9,14 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
-  margin-top: 10px;
+  margin: 5px;
   font-weight: 500;
 }
 
 .btn-create {
   @extend .btn;
   border: 1px #43b472 solid;
+  width: 100px;
 
   &:hover {
     background-color: #21a361;
@@ -23,8 +24,18 @@
   }
 }
 
-
 .btn-savePassword {
+  @extend .btn;
+  border: 1px #43b4ae solid;
+
+  &:hover {
+    background-color: #43b4ae;
+    color: #000;
+  }
+}
+
+
+.btn-tableSavePassword {
   @extend .btn;
   border: 1px rgb(209, 49, 49) solid;
   text-decoration: none;
