@@ -1,28 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+
 const SavedPasswords = () => {
+
+  const passwordArr = useSelector(
+    (state) => state.passwordReducer.savedPasswordsArr
+  );
+
   return (
     <div className='mainContainerSavedPasswords'>
       <div className='mainContainerSavedPasswords-text'>Saved Passwords:</div>
 
       <div className='mainContainerSavedPasswords-table'>
-        <table style={{ width: '100%' }}>
-          <tr>
-            <th>#</th>
-            <th>Password for:</th>
-            <th>Password</th>
-          </tr>
-          <tr>
-            <th>1</th>
-            <td>Jill</td>
-            <td>id2".h),tg*+l%$6ksue",n12voa</td>
-          </tr>
-          <tr>
-            <th>2</th>
-            <td>Smith</td>
-            <td>j6n'+b)8mwf7nsp&h92)65tv)i6/</td>
-          </tr>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Password for:</th>
+              <th>Password</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {passwordArr.map((singleEl, i) => (
+              <tr key = {singleEl.id}>
+                <td>{i + 1}</td>
+                <td>{singleEl.passwordName}</td>
+                <td>{singleEl.password}</td>
+              </tr>
+            ))}
+           </tbody>
         </table>
       </div>
 

@@ -1,7 +1,7 @@
 import { ADD_PASSWORD } from './passwordTypes';
 
 const initialState = {
-  savedPasswords: [],
+  savedPasswordsArr: [],
 };
 
 const passwordReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ const passwordReducer = (state = initialState, action) => {
     case ADD_PASSWORD:
       return {
         ...state,
-        savedPasswords: [...state.savedPasswords, action.payload],
+        savedPasswordsArr: [...state.savedPasswordsArr, action.payload],
       };
 
     default:
