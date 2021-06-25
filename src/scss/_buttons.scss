@@ -1,18 +1,50 @@
-.btn-create {
-  width: 200px;
-  height: 30px;
+.btn {
+  width: 100px;
+  height: 45px;
 
-  color: black;
+  color: #fff;
+  background-color: inherit;
   outline: none;
-  border: 1px #43b472 solid;
-  border-radius: 25px;
+
+  border-radius: 5px;
   cursor: pointer;
   font-size: 20px;
   margin-top: 10px;
-  background-color: #32a472;
   font-weight: 500;
 }
-.btn-create:hover {
-  background-color: #21a361;
-  color: #000;
+
+.btn-create {
+  @extend .btn;
+  border: 1px #43b472 solid;
+
+  &:hover {
+    background-color: #21a361;
+    color: #000;
+  }
 }
+
+
+.btn-savePassword {
+  @extend .btn;
+  border: 1px rgb(209, 49, 49) solid;
+  text-decoration: none;
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(209, 49, 49);
+    color: #000;
+  }
+}
+
+.btn-backHome {
+  @extend .btn;
+  border: 1px rgb(166, 209, 49) solid;
+  text-decoration: none;
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(166, 209, 49);
+    color: #000;
+  }
+}
+

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap');
 
+@import './buttons';
+@import './inputCheckbox';
+@import './rangeSlider';
 @import './Header.scss';
 @import './Box.scss';
-@import './rangeSlider';
-@import './inputCheckbox';
-@import './buttons';
+@import './SavedPasswords';
 
 
 * {

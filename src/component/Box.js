@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Box = () => {
   const [password, setPassword] = useState('');
@@ -109,6 +110,7 @@ const Box = () => {
           <button className='btn-create' onClick={settingPassword}>
             Create
           </button>
+          <Link to='./SavedPasswords' className='btn-savePassword'> Move to the save password</Link>
         </div>
       </div>
     </div>

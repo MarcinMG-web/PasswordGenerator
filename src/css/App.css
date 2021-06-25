@@ -1,4 +1,126 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap");
+.btn, .btn-backHome, .btn-savePassword, .btn-create {
+  width: 100px;
+  height: 45px;
+  color: #fff;
+  background-color: inherit;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.btn-create {
+  border: 1px #43b472 solid;
+}
+.btn-create:hover {
+  background-color: #21a361;
+  color: #000;
+}
+
+.btn-savePassword {
+  border: 1px #d13131 solid;
+  text-decoration: none;
+  padding: 10px;
+}
+.btn-savePassword:hover {
+  background-color: #d13131;
+  color: #000;
+}
+
+.btn-backHome {
+  border: 1px #a6d131 solid;
+  text-decoration: none;
+  padding: 10px;
+}
+.btn-backHome:hover {
+  background-color: #a6d131;
+  color: #000;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #43b472;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #43b472;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.range-slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.range-slider::before,
+.range-slider::after {
+  position: absolute;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.range-slider::before {
+  content: attr(data-min);
+  left: 10px;
+}
+
+.range-slider::after {
+  content: attr(data-max);
+  right: 10px;
+}
+
+.range-slider-label {
+  margin: 10px;
+}
+
+.range-slider-result {
+  font-size: 20px;
+}
+
 .Header {
   margin: 20px;
   font-weight: 600;
@@ -67,106 +189,17 @@
   height: 0;
 }
 
-.range-slider {
-  position: relative;
-  width: 100%;
+.mainContainerSavedPasswords {
+  width: 100vw;
+  height: 90vh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.range-slider::before,
-.range-slider::after {
-  position: absolute;
-  color: #000;
-  font-size: 0.9rem;
+.mainContainerSavedPasswords-text {
+  color: lightcoral;
 }
-
-.range-slider::before {
-  content: attr(data-min);
-  left: 10px;
-}
-
-.range-slider::after {
-  content: attr(data-max);
-  right: 10px;
-}
-
-.range-slider-label {
-  margin: 10px;
-}
-
-.range-slider-result {
-  font-size: 20px;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #fff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked + .slider {
-  background-color: #43b472;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #43b472;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-.btn-create {
-  width: 200px;
-  height: 30px;
-  color: black;
-  outline: none;
-  border: 1px #43b472 solid;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 20px;
-  margin-top: 10px;
-  background-color: #32a472;
-  font-weight: 500;
-}
-
-.btn-create:hover {
-  background-color: #21a361;
-  color: #000;
-}
-
 * {
   margin: 0;
   padding: 0;
