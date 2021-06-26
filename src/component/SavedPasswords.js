@@ -1,10 +1,11 @@
 import React from 'react';
+import SingleEl from './SingleEl';
+
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
 const SavedPasswords = () => {
-
   const passwordArr = useSelector(
     (state) => state.passwordReducer.savedPasswordsArr
   );
@@ -23,27 +24,9 @@ const SavedPasswords = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {passwordArr.map((singleEl, i) => (
-              <tr key={singleEl.id}>
-                <td>{i + 1}</td>
-                <td>{singleEl.passwordName}</td>
-                <td>{singleEl.password}</td>
-                <td className='action'>
-                  <button className='btn-edit'>
-                    <span className='icon'>
-                      <i className='fa fa-pencil'></i>
-                    </span>
-                  </button>
-                  <button className='btn-remove'>
-                    <span className='icon'>
-                      <i className='fa fa-remove'></i>
-                    </span>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          {passwordArr.map((singleEl, i) => (
+            <SingleEl key={i} singleEl={singleEl} i={i} />
+          ))}
         </table>
       </div>
 

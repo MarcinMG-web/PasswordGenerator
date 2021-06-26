@@ -25,11 +25,9 @@ const passwordReducer = (state = initialState, action) => {
     case REMOVE_PASSWORD:
       return {
         ...state,
-        // savedPasswordsArr: [...state.savedPasswordsArr, action.payload],
-        savedPasswordsArr: [
-          ...state.savedPasswordsArr.slice(0, action.payload),
-          ...state.savedPasswordsArr.slice(action.payload + 1),
-        ],
+        savedPasswordsArr: state.savedPasswordsArr.filter(
+          (savedPassword) => savedPassword.id !== action.payload
+        ),
       };
 
     default:
