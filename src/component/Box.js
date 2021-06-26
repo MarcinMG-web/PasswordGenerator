@@ -130,7 +130,7 @@ const Box = () => {
 
         <div className='mainContainer_savePassword'>
           <div className='mainContainer_savePassword-name'>
-            Your name password: {passwordName}
+            Your name password: 
             <input
               type='text'
               className='textInput'
@@ -139,8 +139,9 @@ const Box = () => {
             />
           </div>
           <div className='mainContainer_savePassword-password'>
-            Your generated password:
-            <span style={{ color: '#fff', borderBottom: 'red' }}>
+            
+            Your generated password: 
+            <span style={{ color: '#fff', borderBottom: 'red', display: 'block'}}> 
               {password}
             </span>
           </div>
