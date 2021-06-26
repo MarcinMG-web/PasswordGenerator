@@ -47,6 +47,24 @@
   color: #000;
 }
 
+.btn-icon, .btn-remove, .btn-edit {
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  margin: 5px;
+  background-color: Transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  color: #21a361;
+}
+
+.btn-remove {
+  color: #e91515;
+}
+
 /* The slider */
 .slider {
   position: absolute;
@@ -238,6 +256,18 @@ input:checked + .slider:before {
 .mainContainerSavedPasswords-text {
   color: lightcoral;
 }
+.mainContainerSavedPasswords-table {
+  margin: 10px;
+  padding: 10px;
+}
+
+.action {
+  opacity: 0;
+}
+.action:hover {
+  opacity: 1;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -31,7 +31,6 @@
   }
 }
 
-
 .btn-tableSavePassword {
   @extend .btn;
   border: 1px rgb(209, 49, 49) solid;
@@ -55,4 +54,22 @@
     color: #000;
   }
 }
+.btn-icon {
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  margin: 5px;
+  background-color: Transparent;
+  outline: none;
+  cursor: pointer;
+}
 
+.btn-edit {
+  @extend .btn-icon;
+  color: #21a361;
+}
+
+.btn-remove {
+  @extend .btn-icon;
+  color: rgb(233, 21, 21);
+}
