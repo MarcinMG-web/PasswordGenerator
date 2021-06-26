@@ -1,4 +1,4 @@
-import { ADD_PASSWORD, REMOVE_PASSWORD } from './passwordTypes';
+import { ADD_PASSWORD, REMOVE_PASSWORD, EDIT_PASSWORD } from './passwordTypes';
 
 export const addPassword = (payload) => ({
   type: ADD_PASSWORD,
@@ -9,5 +9,11 @@ export const removePassword = (id) => ({
   type: REMOVE_PASSWORD,
   payload: id
 });
+
+export const editPassword = (payload) => ({
+  type: EDIT_PASSWORD,
+  payload: payload
+});
+
 
 
