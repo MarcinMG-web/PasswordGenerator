@@ -2,6 +2,9 @@ import {
   ADD_PASSWORD,
   REMOVE_PASSWORD,
   UPDATE_PASSWORD,
+  SELECT_PASSWORD,
+  CLEAR_SELECTED_PASSWORD,
+  DELETE_SELECTED_PASSWORD,
 } from './passwordTypes';
 
 const initialState = {
@@ -22,6 +25,8 @@ const initialState = {
       id: 1624701802084,
     },
   ],
+
+  selectPasswordArrToRemove: [],
 };
 
 const passwordReducer = (state = initialState, action) => {
@@ -57,6 +62,26 @@ const passwordReducer = (state = initialState, action) => {
         };
       }
       break;
+
+    case SELECT_PASSWORD:
+      return {
+        ...state,
+        selectPasswordArrToRemove: action.payload,
+      };
+
+    case CLEAR_SELECTED_PASSWORD:
+      return {
+        ...state,
+        selectPasswordArrToRemove: [],
+      };
+
+    case DELETE_SELECTED_PASSWORD: {
+      return {
+        ...state,
+        savedPasswordsArr: [],
+        selectPasswordArrToRemove: [],
+      };
+    }
 
     default:
       return state;

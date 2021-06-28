@@ -6,7 +6,7 @@ import {
   updatePassword,
 } from '../redux/password/passwordActions';
 
-const SingleEl = ({ singleEl, index }) => {
+const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
   const [editTable, setEitTable] = useState(false);
 
   const [editPasswordName, setEditPasswordName] = useState(
@@ -38,7 +38,11 @@ const SingleEl = ({ singleEl, index }) => {
     <tbody key={singleEl}>
       <tr key={singleEl.id}>
         <th>
-          <input type='checkbox' />
+          <input
+            type='checkbox'
+            checked={selectAll}
+            onChange={() => setSelectAll(!selectAll)}
+          />
         </th>
         <td>{index + 1}</td>
         {editTable ? (
