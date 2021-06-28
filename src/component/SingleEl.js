@@ -1,23 +1,78 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { removePassword } from '../redux/password/passwordActions';
+import {
+  removePassword,
+  updatePassword,
+} from '../redux/password/passwordActions';
 
-const SingleEl = ({ singleEl, i }) => {
+const SingleEl = ({ singleEl, index }) => {
+  const [editTable, setEitTable] = useState(false);
+
+  const [editPasswordName, setEditPasswordName] = useState(
+    singleEl.passwordName
+  );
+  const [editPassword, setEditPassword] = useState(singleEl.password);
+
   const dispatch = useDispatch();
+
+  const onClickUpdate = () => {
+    setEitTable(!editTable);
+    dispatch(
+      updatePassword({
+        ...singleEl,
+        passwordName: editPasswordName,
+        password: editPassword,
+      })
+    );
+
+    if (editTable) {
+      setEditPasswordName(editPasswordName);
+      setEditPassword(editPassword);
+    }
+
+    setEitTable(!editTable);
+  };
 
   return (
     <tbody key={singleEl}>
       <tr key={singleEl.id}>
-        <td>{i + 1}</td>
-        <td>{singleEl.passwordName}</td>
-        <td>{singleEl.password}</td>
+        <td>{index + 1}</td>
+        {editTable ? (
+          <>
+            <td>
+              <input
+                value={editPasswordName}
+                onChange={(e) => setEditPasswordName(e.target.value)}
+              />
+            </td>
+            <td>
+              <input
+                value={editPassword}
+                onChange={(e) => setEditPassword(e.target.value)}
+              />
+            </td>
+          </>
+        ) : (
+          <>
+            <td>{singleEl.passwordName}</td>
+            <td>{singleEl.password}</td>
+          </>
+        )}
+
         <td className='action'>
-          <button className='btn-edit'>
-            <span className='icon'>
-              <i className='fa fa-pencil'></i>
-            </span>
+          <button className='btn-edit' onClick={onClickUpdate}>
+            {editTable ? (
+              <span className='icon'>
+                <i className='fa fa-check'></i>
+              </span>
+            ) : (
+              <span className='icon'>
+                <i className='fa fa-pencil'></i>
+              </span>
+            )}
           </button>
+
           <button
             className='btn-remove'
             onClick={() => dispatch(dispatch(removePassword(singleEl.id)))}

@@ -20,12 +20,12 @@ const SavedPasswords = () => {
             <tr>
               <th>#</th>
               <th>Password for:</th>
-              <th>Password</th>
-              <th>Action</th>
+              <th>Password:</th>
+              <th>Action:</th>
             </tr>
           </thead>
-          {passwordArr.map((singleEl, i) => (
-            <SingleEl key={i} singleEl={singleEl} i={i} />
+          {passwordArr.map((singleEl, index) => (
+            <SingleEl key={index} singleEl={singleEl} index={index} />
           ))}
         </table>
       </div>
