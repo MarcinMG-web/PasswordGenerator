@@ -14,8 +14,8 @@ const SavedPasswords = () => {
     <div className='mainContainerSavedPasswords'>
       <div className='mainContainerSavedPasswords-text'>Saved Passwords:</div>
 
-      <div className='mainContainerSavedPasswords-table'>
-        <table>
+      <div className='mainContainerSavedPasswords-tableBox'>
+        <table className='table'>
           <thead>
             <tr>
               <th>#</th>

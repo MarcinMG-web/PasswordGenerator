@@ -44,12 +44,14 @@ const SingleEl = ({ singleEl, index }) => {
               <input
                 value={editPasswordName}
                 onChange={(e) => setEditPasswordName(e.target.value)}
+                className='inputEditPassword'
               />
             </td>
             <td>
               <input
                 value={editPassword}
                 onChange={(e) => setEditPassword(e.target.value)}
+                className='inputEditPassword'
               />
             </td>
           </>
@@ -60,14 +62,14 @@ const SingleEl = ({ singleEl, index }) => {
           </>
         )}
 
-        <td className='action'>
+        <td className='actionIcon'>
           <button className='btn-edit' onClick={onClickUpdate}>
             {editTable ? (
-              <span className='icon'>
+              <span className='actionIcon-icon'>
                 <i className='fa fa-check'></i>
               </span>
             ) : (
-              <span className='icon'>
+              <span className='actionIcon-icon'>
                 <i className='fa fa-pencil'></i>
               </span>
             )}
