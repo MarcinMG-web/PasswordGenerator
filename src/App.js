@@ -9,7 +9,6 @@ import SavedPasswords from './component/SavedPasswords';
 function App() {
   return (
     <Router>
-      <div className='App'>
         <Switch>
           <Route path='/' exact>
             <Header />
@@ -19,7 +18,6 @@ function App() {
             <SavedPasswords />
           </Route>
         </Switch>
-      </div>
     </Router>
   );
 }
