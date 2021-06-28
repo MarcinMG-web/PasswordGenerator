@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap");
-.btn, .btn-backHome, .btn-tableSavePassword, .btn-savePassword, .btn-create {
+.btn, .btn-removeChecked, .btn-backHome, .btn-tableSavePassword, .btn-savePassword, .btn-create {
   color: #fff;
   background-color: inherit;
   outline: none;
@@ -44,6 +44,16 @@
 }
 .btn-backHome:hover {
   background-color: #a6d131;
+  color: #000;
+}
+
+.btn-removeChecked {
+  border: 1px #fc0101 solid;
+  text-decoration: none;
+  padding: 10px;
+}
+.btn-removeChecked:hover {
+  background-color: #fc0101;
   color: #000;
 }
 

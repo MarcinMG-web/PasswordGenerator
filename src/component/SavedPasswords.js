@@ -18,6 +18,9 @@ const SavedPasswords = () => {
         <table className='table'>
           <thead>
             <tr>
+              <th>
+                <input type='checkbox' />
+              </th>
               <th>#</th>
               <th>Password for:</th>
               <th>Password:</th>
@@ -34,6 +37,9 @@ const SavedPasswords = () => {
         <Link to='./' className='btn-backHome'>
           Back
         </Link>
+        <button className='btn-removeChecked'>
+          Remove Checked
+        </button>
       </div>
     </div>
   );

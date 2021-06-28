@@ -54,6 +54,19 @@
     color: #000;
   }
 }
+
+.btn-removeChecked{
+  @extend .btn;
+  border: 1px rgb(252, 1, 1) solid;
+  text-decoration: none;
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(252, 1, 1);
+    color: #000;
+  }
+}
+
 .btn-icon {
   outline: none;
   cursor: pointer;

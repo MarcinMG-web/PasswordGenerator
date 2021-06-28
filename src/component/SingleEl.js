@@ -37,6 +37,9 @@ const SingleEl = ({ singleEl, index }) => {
   return (
     <tbody key={singleEl}>
       <tr key={singleEl.id}>
+        <th>
+          <input type='checkbox' />
+        </th>
         <td>{index + 1}</td>
         {editTable ? (
           <>
