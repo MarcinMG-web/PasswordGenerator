@@ -20,13 +20,17 @@ const SavedPasswords = () => {
     (state) => state.passwordReducer.savedPasswordsArr
   );
 
-  useEffect(() => {
+  const setSelectAllPasswordToDispatch = () => {
     if (selectAll) {
       dispatch(selectPasswords(passwordArr.map((el) => el.id)));
     } else {
       dispatch(clearSelectedPasswords());
     }
-  }, [selectAll,dispatch, passwordArr]);
+  };
+
+  useEffect(() => {
+    setSelectAllPasswordToDispatch();
+  }, [selectAll]);
 
   return (
     <div className='mainContainerSavedPasswords'>
