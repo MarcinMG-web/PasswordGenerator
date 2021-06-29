@@ -60,13 +60,24 @@ const Box = () => {
   };
 
   const onClickAddPassword = () => {
-    dispatch(
-      addPassword({
-        passwordName: passwordName,
-        password: password,
-        id: Date.now(),
-      })
-    );
+    if (
+      ((passwordName !== '' || passwordName === 'Set the name password') &&
+        (password === '' || password !== 'Set the opportunities'))
+      &&
+      (password !== '' || password === 'Set the opportunities')
+    ) {
+      dispatch(
+        addPassword({
+          passwordName: passwordName,
+          password: password,
+          id: Date.now(),
+        })
+      );
+    } else {
+
+      setPasswordName('Set the name password');
+      settingPassword('Set the opportunities');
+    }
   };
 
   return (
@@ -135,6 +146,7 @@ const Box = () => {
               className='mainContainer_savePassword-name-textInput'
               value={passwordName}
               onChange={(e) => setPasswordName(e.target.value)}
+              onClick={() => setPasswordName('')}
             />
           </div>
           <div className='mainContainer_savePassword-password'>
