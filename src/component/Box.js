@@ -143,7 +143,7 @@ const Box = () => {
             Your name password:
             <input
               type='text'
-              className='mainContainer_savePassword-name-textInput'
+              className='mainContainer_savePassword-name-textInput_green'
               value={passwordName}
               onChange={(e) => setPasswordName(e.target.value)}
               onClick={() => setPasswordName('')}
@@ -151,7 +151,11 @@ const Box = () => {
           </div>
           <div className='mainContainer_savePassword-password'>
             Your generated password:
-            <span style={{ color: '#fff', display: 'block' }}>{password}</span>
+            <input
+              type='text'
+              className='mainContainer_savePassword-name-textInput_red'
+              value={password}
+            />
           </div>
         </div>
 

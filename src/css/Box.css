@@ -40,11 +40,19 @@
   color: green;
   padding: 5px;
 }
-.mainContainer_savePassword-name-textInput {
+.mainContainer_savePassword-name-textInput_green {
   background: transparent;
   color: #fff;
   border: #fff;
   border-bottom: 1px green solid;
+  outline: unset;
+  text-align: center;
+}
+.mainContainer_savePassword-name-textInput_red {
+  background: transparent;
+  color: #fff;
+  border: #fff;
+  border-bottom: 1px red solid;
   outline: unset;
   text-align: center;
 }

@@ -224,6 +224,7 @@ input:checked + .slider:before {
 
 .Header {
   margin: 20px;
+  padding: 10px;
   font-weight: 600;
   font-size: 45px;
 }
@@ -270,11 +271,19 @@ input:checked + .slider:before {
   color: green;
   padding: 5px;
 }
-.mainContainer_savePassword-name-textInput {
+.mainContainer_savePassword-name-textInput_green {
   background: transparent;
   color: #fff;
   border: #fff;
   border-bottom: 1px green solid;
+  outline: unset;
+  text-align: center;
+}
+.mainContainer_savePassword-name-textInput_red {
+  background: transparent;
+  color: #fff;
+  border: #fff;
+  border-bottom: 1px red solid;
   outline: unset;
   text-align: center;
 }

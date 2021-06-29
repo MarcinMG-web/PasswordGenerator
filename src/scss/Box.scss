@@ -46,7 +46,7 @@
       color: rgb(0, 128, 0);
       padding: 5px;
 
-      &-textInput {
+      &-textInput_green {
         background: transparent;
         color: #fff;
         border: #fff;
@@ -54,8 +54,16 @@
         outline: unset;
         text-align: center;
       }
+      &-textInput_red {
+        background: transparent;
+        color: #fff;
+        border: #fff;
+        border-bottom: 1px rgb(255, 0, 0) solid;
+        outline: unset;
+        text-align: center;
+      }
     }
-    
+
     &-password {
       color: rgb(255, 0, 0);
       padding: 5px;
