@@ -37,13 +37,6 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
   return (
     <tbody key={singleEl}>
       <tr key={singleEl.id}>
-        <th>
-          <input
-            type='checkbox'
-            checked={selectAll}
-            onChange={() => setSelectAll(!selectAll)}
-          />
-        </th>
         <td>{index + 1}</td>
         {editTable ? (
           <>
@@ -68,7 +61,7 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
             <td>{singleEl.password}</td>
           </>
         )}
-
+        
         <td className='actionIcon'>
           <button className='btn-edit' onClick={onClickUpdate}>
             {editTable ? (
@@ -91,6 +84,17 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
             </span>
           </button>
         </td>
+        <th>
+          <div className='checkbox'>
+            <input
+              type='checkbox'
+              checked={selectAll}
+              onChange={() => setSelectAll(!selectAll)}
+            />
+            <label htmlFor='checkbox'>
+            </label>
+          </div>
+        </th>
       </tr>
     </tbody>
   );

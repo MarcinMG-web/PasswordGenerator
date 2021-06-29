@@ -35,35 +35,25 @@ const SavedPasswords = () => {
   return (
     <div className='mainContainerSavedPasswords'>
       <div className='mainContainerSavedPasswords-text'>Saved Passwords:</div>
-
-      {selectAll ? (
-        <button
-          className='btn-removeChecked'
-          onClick={() => dispatch(deleteSelectedPassword())}
-        >
-          Remove Checked
-        </button>
-      ) : (
-        ''
-      )}
-
       <div className='mainContainerSavedPasswords-tableBox'>
         <table className='table'>
           <thead>
             <tr>
-              <th>
-                <input
-                  type='checkbox'
-                  id='selectAll'
-                  value={selectAll}
-                  onChange={() => setSelectAll(!selectAll)}
-                />
-                <label htmlFor='selectAll'></label>
-              </th>
               <th>#</th>
               <th>Password for:</th>
               <th>Password:</th>
               <th>Action:</th>
+              <th>
+                <div className='checkbox'>
+                  <input
+                    type='checkbox'
+                    id='checkbox'
+                    value={selectAll}
+                    onChange={() => setSelectAll(!selectAll)}
+                  />
+                  <label htmlFor='checkbox'></label>
+                </div>
+              </th>
             </tr>
           </thead>
           {passwordArr.map((singleEl, index) => (
@@ -82,6 +72,16 @@ const SavedPasswords = () => {
         <Link to='./' className='btn-backHome'>
           Back
         </Link>
+        {selectAll ? (
+          <button
+            className='btn-removeChecked'
+            onClick={() => dispatch(deleteSelectedPassword())}
+          >
+            Remove Checked
+          </button>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );
