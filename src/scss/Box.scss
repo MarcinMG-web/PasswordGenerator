@@ -27,27 +27,37 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    
+
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
-    
+
     height: auto;
     border: 1px, solid, black;
     font-size: 24px;
   }
 
-  &_savePassword{
+  &_savePassword {
     display: flex;
     flex-direction: column;
     padding: 5px;
-    
-    &-name{
-      color: green;
+
+    &-name {
+      color: rgb(0, 128, 0);
       padding: 5px;
+
+      &-textInput {
+        background: transparent;
+        color: #fff;
+        border: #fff;
+        border-bottom: 1px green solid;
+        outline: unset;
+        text-align: center;
+      }
     }
-    &-password{
-      color: red;
+    
+    &-password {
+      color: rgb(255, 0, 0);
       padding: 5px;
     }
   }
@@ -95,5 +105,3 @@
     }
   }
 }
-
-

@@ -60,7 +60,6 @@ const Box = () => {
   };
 
   const onClickAddPassword = () => {
-
     dispatch(
       addPassword({
         passwordName: passwordName,
@@ -130,20 +129,17 @@ const Box = () => {
 
         <div className='mainContainer_savePassword'>
           <div className='mainContainer_savePassword-name'>
-            Your name password: 
+            Your name password:
             <input
               type='text'
-              className='textInput'
+              className='mainContainer_savePassword-name-textInput'
               value={passwordName}
               onChange={(e) => setPasswordName(e.target.value)}
             />
           </div>
           <div className='mainContainer_savePassword-password'>
-            
-            Your generated password: 
-            <span style={{ color: '#fff', borderBottom: 'red', display: 'block'}}> 
-              {password}
-            </span>
+            Your generated password:
+            <span style={{ color: '#fff', display: 'block' }}>{password}</span>
           </div>
         </div>
 

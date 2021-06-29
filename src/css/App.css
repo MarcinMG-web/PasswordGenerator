@@ -87,8 +87,7 @@
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
-.slider:before {
+.slider::before {
   position: absolute;
   content: "";
   height: 16px;
@@ -118,18 +117,8 @@ input:checked + .slider:before {
 .slider.round {
   border-radius: 34px;
 }
-
-.slider.round:before {
+.slider.round::before {
   border-radius: 50%;
-}
-
-.textInput {
-  background: transparent;
-  color: #fff;
-  border: #fff;
-  border-bottom: 1px green solid;
-  outline: unset;
-  text-align: center;
 }
 
 .checkbox {
@@ -234,7 +223,7 @@ input:checked + .slider:before {
 }
 
 .Header {
-  margin: 5px;
+  margin: 20px;
   font-weight: 600;
   font-size: 45px;
 }
@@ -280,6 +269,14 @@ input:checked + .slider:before {
 .mainContainer_savePassword-name {
   color: green;
   padding: 5px;
+}
+.mainContainer_savePassword-name-textInput {
+  background: transparent;
+  color: #fff;
+  border: #fff;
+  border-bottom: 1px green solid;
+  outline: unset;
+  text-align: center;
 }
 .mainContainer_savePassword-password {
   color: red;
