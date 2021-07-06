@@ -5,29 +5,30 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
 
-.range-slider::before,
-.range-slider::after {
-  position: absolute;
-  color: #fff;
-  font-size: 0.9rem;
-}
+  &-label {
+    margin: 10px;
+  }
 
-.range-slider::before {
-  content: attr(data-min);
-  left: 10px;
-}
+  &-result {
+    font-size: 20px;
+    color: red
+  }
 
-.range-slider::after {
-  content: attr(data-max);
-  right: 10px;
-}
+  &::before,
+  &::after {
+    position: absolute;
+    color: #fff;
+    font-size: 0.9rem;
+  }
 
-.range-slider-label {
-  margin: 10px;
-}
+  &::before {
+    content: attr(data-min);
+    left: 10px;
+  }
 
-.range-slider-result {
-  font-size: 20px;
+  &::after {
+    content: attr(data-max);
+    right: 10px;
+  }
 }

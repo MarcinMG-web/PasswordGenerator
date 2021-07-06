@@ -94,7 +94,7 @@ const Box = () => {
             value={passwordLength}
             onChange={chandlerChangePasswordLength}
           />
-          <div className='range-slider-result' style={{ color: 'red' }}>
+          <div className='range-slider-result'>
             {passwordLength}
           </div>
         </div>

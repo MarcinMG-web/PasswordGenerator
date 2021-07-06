@@ -196,30 +196,25 @@ input:checked + .slider:before {
   justify-content: center;
   flex-direction: column;
 }
-
-.range-slider::before,
-.range-slider::after {
+.range-slider-label {
+  margin: 10px;
+}
+.range-slider-result {
+  font-size: 20px;
+  color: red;
+}
+.range-slider::before, .range-slider::after {
   position: absolute;
   color: #fff;
   font-size: 0.9rem;
 }
-
 .range-slider::before {
   content: attr(data-min);
   left: 10px;
 }
-
 .range-slider::after {
   content: attr(data-max);
   right: 10px;
-}
-
-.range-slider-label {
-  margin: 10px;
-}
-
-.range-slider-result {
-  font-size: 20px;
 }
 
 .Header {
