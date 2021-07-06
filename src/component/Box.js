@@ -94,9 +94,7 @@ const Box = () => {
             value={passwordLength}
             onChange={chandlerChangePasswordLength}
           />
-          <div className='range-slider-result'>
-            {passwordLength}
-          </div>
+          <div className='range-slider-result'>{passwordLength}</div>
         </div>
 
         <div className='checkBoxContainer'>
@@ -168,6 +166,9 @@ const Box = () => {
           </button>
           <Link to='./SavedPasswords' className='btn-tableSavePassword'>
             Move to the save password
+          </Link>
+          <Link to='./checkPassword' className='btn-checkedPassword'>
+            Check Your Password
           </Link>
         </div>
       </div>

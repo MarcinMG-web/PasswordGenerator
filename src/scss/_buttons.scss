@@ -42,6 +42,17 @@
     color: #000;
   }
 }
+.btn-checkedPassword {
+  @extend .btn;
+  border: 1px rgb(241, 178, 2) solid;
+  text-decoration: none;
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(241, 178, 2);
+    color: #000;
+  }
+}
 
 .btn-backHome {
   @extend .btn;
