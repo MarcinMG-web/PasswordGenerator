@@ -99,17 +99,5 @@
 
   &_label {
     font-size: 20px;
-    /* The switch - the box around the slider */
-    &-switch {
-      position: relative;
-      width: 50px;
-      height: 24px;
-    }
-    /* Hide default checkbox */
-    &-switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
   }
 }

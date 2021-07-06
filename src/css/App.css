@@ -75,6 +75,19 @@
   color: #e91515;
 }
 
+/* The switch - the box around the slider */
+.checkBoxContainer_label-switch {
+  position: relative;
+  width: 50px;
+  height: 24px;
+  /* Hide default checkbox */
+}
+.checkBoxContainer_label-switch-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 /* The slider */
 .slider {
   position: absolute;
@@ -310,18 +323,6 @@ input:checked + .slider:before {
 }
 .checkBoxContainer_label {
   font-size: 20px;
-  /* The switch - the box around the slider */
-  /* Hide default checkbox */
-}
-.checkBoxContainer_label-switch {
-  position: relative;
-  width: 50px;
-  height: 24px;
-}
-.checkBoxContainer_label-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
 }
 
 .mainContainerSavedPasswords {
