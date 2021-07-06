@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Header = () => {
-  return <div className='Header'>Password generator</div>;
+  return <div className='header'>Password generator</div>;
 };
 
 export default Header;

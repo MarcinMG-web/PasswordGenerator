@@ -134,6 +134,34 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+.range-slider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.range-slider-label {
+  margin: 10px;
+}
+.range-slider-result {
+  font-size: 20px;
+  color: #f30909;
+}
+.range-slider::before, .range-slider::after {
+  position: absolute;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.range-slider::before {
+  content: attr(data-min);
+  left: 10px;
+}
+.range-slider::after {
+  content: attr(data-max);
+  right: 10px;
+}
+
 .checkbox {
   width: 100%;
   margin: 15px auto;
@@ -202,35 +230,7 @@ input:checked + .slider:before {
   outline: 0;
 }
 
-.range-slider {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.range-slider-label {
-  margin: 10px;
-}
-.range-slider-result {
-  font-size: 20px;
-  color: red;
-}
-.range-slider::before, .range-slider::after {
-  position: absolute;
-  color: #fff;
-  font-size: 0.9rem;
-}
-.range-slider::before {
-  content: attr(data-min);
-  left: 10px;
-}
-.range-slider::after {
-  content: attr(data-max);
-  right: 10px;
-}
-
-.Header {
+.header {
   margin: 20px;
   padding: 10px;
   font-weight: 600;
