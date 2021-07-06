@@ -154,7 +154,7 @@ const Box = () => {
             <input
               type='text'
               className='mainContainer_savePassword-name-textInput_red'
-              value={password}
+              defaultValue={password}
             />
           </div>
         </div>

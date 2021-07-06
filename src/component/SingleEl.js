@@ -61,7 +61,7 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
             <td>{singleEl.password}</td>
           </>
         )}
-        
+
         <td className='actionIcon'>
           <button className='btn-edit' onClick={onClickUpdate}>
             {editTable ? (
@@ -89,10 +89,10 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
             <input
               type='checkbox'
               checked={selectAll}
+              value={selectAll}
               onChange={() => setSelectAll(!selectAll)}
             />
-            <label htmlFor='checkbox'>
-            </label>
+            <label htmlFor='checkbox'></label>
           </div>
         </th>
       </tr>
