@@ -2,10 +2,10 @@ import './css/App.css';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Header from './component/Header';
-import Box from './component/Box';
-import SavedPasswords from './component/SavedPasswords';
-import CheckPassword from './component/CheckPassword';
+import Header from './components/Header';
+import Box from './components/Box';
+import SavedPasswords from './components/SavedPasswords';
+import CheckPassword from './components/CheckPassword';
 
 function App() {
   return (

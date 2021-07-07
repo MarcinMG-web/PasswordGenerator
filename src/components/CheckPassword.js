@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CheckPassword = () => {
+  
   const checkYourPassword = () => {
      spinner();
      stopSpinner()
@@ -16,7 +17,7 @@ const CheckPassword = () => {
     const spinnerDelay = () => {
       document.getElementById('spinner').style.display = 'none';
     };
-    setTimeout(spinnerDelay, 500);
+    setTimeout(spinnerDelay, 1000);
   };
 
   return (
