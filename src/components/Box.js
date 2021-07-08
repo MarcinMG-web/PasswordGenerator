@@ -11,6 +11,7 @@ const Box = () => {
 
   const [passwordLength, setPasswordLength] = useState(22);
   const [includeLetters, setIncludeLetters] = useState(false);
+  const [includeUppercase, setIncludeUppercase] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
   const [includeSymbol, setIncludeSymbols] = useState(false);
 
@@ -21,13 +22,19 @@ const Box = () => {
   };
 
   const settingPassword = () => {
-    if (includeLetters || includeNumbers || includeSymbol) {
+    if (includeLetters || includeUppercase || includeNumbers || includeSymbol) {
       let characterList = [];
       if (includeLetters) {
         const tabLetters = Array(26)
           .fill(0)
           .map((el, i) => String.fromCharCode(97 + i));
         characterList.push(...tabLetters);
+      }
+      if (includeUppercase) {
+        const tabUpperLetters = Array(26)
+          .fill(0)
+          .map((el, i) => String.fromCharCode(65 + i));
+        characterList.push(...tabUpperLetters);
       }
       if (includeNumbers) {
         const tabNumbers = Array(10)
@@ -61,9 +68,8 @@ const Box = () => {
 
   const onClickAddPassword = () => {
     if (
-      ((passwordName !== '' || passwordName === 'Set the name password') &&
-        (password === '' || password !== 'Set the opportunities'))
-      &&
+      (passwordName !== '' || passwordName === 'Set the name password') &&
+      (password === '' || password !== 'Set the opportunities') &&
       (password !== '' || password === 'Set the opportunities')
     ) {
       dispatch(
@@ -74,7 +80,6 @@ const Box = () => {
         })
       );
     } else {
-
       setPasswordName('Set the name password');
       settingPassword('Set the opportunities');
     }
@@ -104,6 +109,19 @@ const Box = () => {
               type='checkbox'
               checked={includeLetters}
               onChange={(e) => setIncludeLetters(e.target.checked)}
+              className='checkBox-input'
+            />
+            <span className='slider round'></span>
+          </label>
+        </div>
+
+        <div className='checkBoxContainer'>
+          <label className='checkBoxContainer_label'>Include Uppercase:</label>
+          <label className='checkBoxContainer_label-switch'>
+            <input
+              type='checkbox'
+              checked={includeUppercase}
+              onChange={(e) => setIncludeUppercase(e.target.checked)}
               className='checkBox-input'
             />
             <span className='slider round'></span>
