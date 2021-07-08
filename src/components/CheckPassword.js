@@ -1,145 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
-
 
 const CheckPassword = () => {
   const [passwordToCheck, setPasswordToCheck] = useState('');
 
-  const initialError = {
+  const initialInfo = {
     toShortPassword: '',
-
-    easyPassword: '',
-    mediumPassword: '',
-    intermediatePassword: '',
-    strongPassword: '',
-    veryStrongPassword: '',
+    easyPasswordText: '',
+    mediumPasswordText: '',
+    strongPasswordText: '',
   };
 
-  const [typesOfPassword, setTypesOfPassword] = useState(initialError);
+  const [typesOfPassword, setTypesOfPassword] = useState(initialInfo);
+
+  let timeout;
+
+  useEffect(() => {
+    spinner();
+
+    check();
+
+    stopSpinner();
+  }, [passwordToCheck, timeout]);
 
   const handleChange = (e) => {
-    // spinner();
     setPasswordToCheck(e.target.value);
     check();
-    // stopSpinner()
   };
 
   const checkYourPassword = () => {
-    
-    let toShortPassword;
-    let easyPassword;
-    let mediumPassword;
-    let intermediatePassword;
-    let strongPassword;
-    let veryStrongPassword;
+    let strongPassword = new RegExp(
+      '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{12,})'
+    );
+    let mediumPassword = new RegExp(
+      '((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,11}))'
+    );
 
-    if (passwordToCheck.length <= 6) {
-      toShortPassword = 'Your Password is to short. ';
-      // stopSpinner()
+    if (passwordToCheck.length === 0) {
+      setTypesOfPassword({});
+    } else if (passwordToCheck.length < 6) {
+      setTypesOfPassword({ toShortPassword: 'Your password is to short...' });
+    } else if (strongPassword.test(passwordToCheck)) {
+      setTypesOfPassword({ strongPasswordText: 'Your password is Strong' });
+    } else if (mediumPassword.test(passwordToCheck)) {
+      setTypesOfPassword({ mediumPasswordText: 'Your password is Medium' });
+    } else {
+      setTypesOfPassword({ easyPasswordText: 'Your password is Easy' });
     }
-
-    function validateEasyPassword(passwordToCheck) {
-      const pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,8}$/;
-      const result = pattern.test(passwordToCheck);
-
-      if (result) {
-        easyPassword =
-          'Your password has 6 - 8 sings at least 1 letter, 1 number. ';
-      } else {
-        easyPassword = '';
-      }
-    }
-
-    function validateMediumPassword(passwordToCheck) {
-      const pattern =
-        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,10}$/;
-      const result = pattern.test(passwordToCheck);
-
-      if (result) {
-        intermediatePassword =
-          'Your password has 9-10 sings at least 1 letter, 1 number and  1 special character. ';
-      } else {
-        intermediatePassword = '';
-      }
-    }
-
-    function validateIntermediatePassword(passwordToCheck) {
-      const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,10}$/;
-      const result = pattern.test(passwordToCheck);
-
-      if (result) {
-        mediumPassword =
-          'Your password has 9-10 sings at least 1 uppercase letter, 1 lowercase letter, and 1 number. ';
-      } else {
-        mediumPassword = '';
-      }
-    }
-
-    function validateStrongPassword(passwordToCheck) {
-      const pattern =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{11,12}$/;
-      const result = pattern.test(passwordToCheck);
-
-      if (result) {
-        strongPassword =
-          'Your password has at least 11 - 12 sings at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character. ';
-      } else {
-        strongPassword = '';
-      }
-    }
-
-    function validateVeryStrongPassword(passwordToCheck) {
-      const pattern =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$/;
-      const result = pattern.test(passwordToCheck);
-
-      if (result) {
-        veryStrongPassword =
-          'Your password has more that 12 sings at least one uppercase letter, one lowercase letter, one number and one special character. ';
-      } else {
-        veryStrongPassword = '';
-      }
-    }
-
-    spinner();
-    validateEasyPassword(passwordToCheck);
-    validateMediumPassword(passwordToCheck);
-    validateIntermediatePassword(passwordToCheck);
-    validateStrongPassword(passwordToCheck);
-    validateVeryStrongPassword(passwordToCheck);
-    stopSpinner();
-
-    if (
-      toShortPassword ||
-      easyPassword ||
-      mediumPassword ||
-      intermediatePassword ||
-      strongPassword ||
-      veryStrongPassword
-    ) {
-      setTypesOfPassword({
-        toShortPassword,
-        easyPassword,
-        mediumPassword,
-        intermediatePassword,
-        strongPassword,
-        veryStrongPassword,
-      });
-      return false;
-    }
-    return true;
   };
-
+  // Check Password
   const check = () => {
-    const isValid = checkYourPassword();
-    if (isValid) {
-      //clear error
-      setTypesOfPassword('');
-    }
+    timeout = setTimeout(() => checkYourPassword(passwordToCheck), 100);
   };
-
-  console.log('typesOfPassword', typesOfPassword);
 
   // Loader
   const spinner = () => {
@@ -149,7 +62,7 @@ const CheckPassword = () => {
     const spinnerDelay = () => {
       document.getElementById('spinner').style.display = 'none';
     };
-    setTimeout(spinnerDelay, 500);
+    setTimeout(spinnerDelay, 550);
   };
 
   return (
@@ -176,11 +89,9 @@ const CheckPassword = () => {
 
       <div className='mainContainerCheckPasswords_resolveInformationAboutPassword'>
         {typesOfPassword.toShortPassword}
-        {typesOfPassword.easyPassword}
-        {typesOfPassword.mediumPassword}
-        {typesOfPassword.intermediatePassword}
-        {typesOfPassword.strongPassword}
-        {typesOfPassword.veryStrongPassword}
+        {typesOfPassword.easyPasswordText}
+        {typesOfPassword.mediumPasswordText}
+        {typesOfPassword.strongPasswordText}
       </div>
 
       <div className='mainContainerCheckPassword_buttons'>
