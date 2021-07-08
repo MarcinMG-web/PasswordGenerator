@@ -10,17 +10,22 @@ import {
 const initialState = {
   savedPasswordsArr: [
     {
-      passwordName: 'strong password',
-      password: 'b/kn.!-8gv68ccv/l',
+      passwordName: 'hard password',
+      password: 'fmsX-EKfMf/jTtOXV(TXg5CN/RRnBRa5',
       id: 1624701791816,
     },
     {
-      passwordName: 'good password',
-      password: "iyob'&8iph.!.v8pct-v%7",
+      passwordName: 'strong password',
+      password: 'aUhKoqNtjpwm7Kvjf593Mg#+A',
       id: 1624701802088,
     },
     {
-      passwordName: 'easy ',
+      passwordName: 'medium password',
+      password: "iyob'&#Dsa",
+      id: 1624701802088,
+    },
+    {
+      passwordName: 'easy password',
       password: '12345',
       id: 1624701802084,
     },
