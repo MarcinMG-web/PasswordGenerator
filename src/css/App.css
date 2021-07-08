@@ -85,6 +85,17 @@
   color: #e91515;
 }
 
+.btn-changeInputPassword {
+  border: 0;
+  margin: 0;
+  background-color: Transparent;
+  outline: none;
+  cursor: pointer;
+  color: #d61717;
+  position: relative;
+  right: 40px;
+}
+
 /* The switch - the box around the slider */
 .checkBoxContainer_label-switch {
   position: relative;
@@ -488,6 +499,7 @@ input:checked + .slider:before {
 .checkPassword {
   width: 50vw;
   height: 45px;
+  min-width: 420px;
   text-align: center;
   border: 1px solid #f1b202;
   border-radius: 5px;

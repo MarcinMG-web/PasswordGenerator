@@ -66,7 +66,7 @@
   }
 }
 
-.btn-removeChecked{
+.btn-removeChecked {
   @extend .btn;
   border: 1px rgb(252, 1, 1) solid;
   text-decoration: none;
@@ -96,4 +96,16 @@
 .btn-remove {
   @extend .btn-icon;
   color: rgb(233, 21, 21);
+}
+
+.btn-changeInputPassword {
+  border: 0;
+  margin: 0;
+
+  background-color: Transparent;
+  outline: none;
+  cursor: pointer;
+  color: rgb(214, 23, 23);
+  position: relative;
+  right: 40px;
 }

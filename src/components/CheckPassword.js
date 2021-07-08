@@ -14,6 +14,8 @@ const CheckPassword = () => {
 
   const [typesOfPassword, setTypesOfPassword] = useState(initialInfo);
 
+  const [changeInputPassword, setChangeInputPassword] = useState(true);
+
   let timeout;
 
   useEffect(() => {
@@ -70,15 +72,36 @@ const CheckPassword = () => {
       <div className='mainContainerCheckPasswords_text'>
         Check Your Password:
       </div>
-
       <div className='mainContainerCheckPasswords_input'>
-        <input
-          type='text'
-          placeholder='Check here...'
-          className='checkPassword'
-          value={passwordToCheck}
-          onChange={handleChange}
-        />
+        {changeInputPassword ? (
+          <input
+            type='password'
+            placeholder='Check here...'
+            className='checkPassword'
+            value={passwordToCheck}
+            onChange={handleChange}
+          />
+        ) : (
+          <input
+            type='text'
+            placeholder='Check here...'
+            className='checkPassword'
+            value={passwordToCheck}
+            onChange={handleChange}
+          />
+        )}
+        <button
+          className='btn-changeInputPassword'
+          onClick={() => setChangeInputPassword(!changeInputPassword)}
+        >
+          <span className='actionIcon-icon'>
+            <i
+              className={`${
+                changeInputPassword ? 'fa fa-eye-slash' : 'fa fa-eye fa-lg:'
+              }`}
+            ></i>
+          </span>
+        </button>
       </div>
 
       <div className='mainContainerCheckPasswords_spinier'>
@@ -86,14 +109,12 @@ const CheckPassword = () => {
           Loading...
         </div>
       </div>
-
       <div className='mainContainerCheckPasswords_resolveInformationAboutPassword'>
         {typesOfPassword.toShortPassword}
         {typesOfPassword.easyPasswordText}
         {typesOfPassword.mediumPasswordText}
         {typesOfPassword.strongPasswordText}
       </div>
-
       <div className='mainContainerCheckPassword_buttons'>
         <Link to='./' className='btn-backHome'>
           Back
