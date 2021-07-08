@@ -72,6 +72,9 @@ const SavedPasswords = () => {
         <Link to='./' className='btn-backHome'>
           Back
         </Link>
+        <Link to='./checkPassword' className='btn-checkedPassword'>
+          Check Your Password
+        </Link>
         {selectAll ? (
           <button
             className='btn-removeChecked'
