@@ -375,6 +375,7 @@ input:checked + .slider:before {
   padding: 5px;
 }
 .mainContainer_savePassword-name-textInput_green {
+  width: 100%;
   background: transparent;
   color: #fff;
   border: #fff;
@@ -383,6 +384,7 @@ input:checked + .slider:before {
   text-align: center;
 }
 .mainContainer_savePassword-name-textInput_red {
+  width: 100%;
   background: transparent;
   color: #fff;
   border: #fff;

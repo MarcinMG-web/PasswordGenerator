@@ -41,6 +41,7 @@
   padding: 5px;
 }
 .mainContainer_savePassword-name-textInput_green {
+  width: 100%;
   background: transparent;
   color: #fff;
   border: #fff;
@@ -49,6 +50,7 @@
   text-align: center;
 }
 .mainContainer_savePassword-name-textInput_red {
+  width: 100%;
   background: transparent;
   color: #fff;
   border: #fff;
