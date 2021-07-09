@@ -16,13 +16,13 @@ const SavedPasswords = () => {
 
   const dispatch = useDispatch();
 
-  const passwordArr = useSelector(
+  const passwordsArr = useSelector(
     (state) => state.passwordReducer.savedPasswordsArr
   );
 
   const setSelectAllPasswordToDispatch = () => {
     if (selectAll) {
-      dispatch(selectPasswords(passwordArr.map((el) => el.id)));
+      dispatch(selectPasswords(passwordsArr.map((el) => el.id)));
     } else {
       dispatch(clearSelectedPasswords());
     }
@@ -56,7 +56,7 @@ const SavedPasswords = () => {
               </th>
             </tr>
           </thead>
-          {passwordArr.map((singleEl, index) => (
+          {passwordsArr.map((singleEl, index) => (
             <SingleEl
               key={index}
               singleEl={singleEl}
