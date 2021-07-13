@@ -489,6 +489,10 @@ input:checked + .slider:before {
   width: 100px;
   height: 100px;
 }
+.mainContainerCheckPasswords_resolveInformationAboutPassword {
+  width: 320px;
+  height: 45px;
+}
 .mainContainerCheckPasswords_button {
   display: flex;
   flex-direction: row;
@@ -507,7 +511,6 @@ input:checked + .slider:before {
   border-radius: 5px;
   outline: none;
 }
-
 * {
   margin: 0;
   padding: 0;

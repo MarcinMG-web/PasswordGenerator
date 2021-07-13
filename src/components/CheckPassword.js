@@ -118,17 +118,17 @@ const CheckPassword = () => {
           Loading...
         </div>
       </div>
+
       <div className='mainContainerCheckPasswords_resolveInformationAboutPassword'>
         <p style={{ color: 'red' }}>{typesOfPassword.toShortPassword}</p>
-        {/* {typesOfPassword.toShortPassword} */}
+
         <p style={{ color: 'red' }}>{typesOfPassword.easyPasswordText}</p>
-        {/* {typesOfPassword.easyPasswordText} */}
+
         <p style={{ color: 'orange' }}>{typesOfPassword.mediumPasswordText}</p>
 
         <p style={{ color: 'chartreuse' }}>
           {typesOfPassword.strongPasswordText}
         </p>
-        {/* {typesOfPassword.strongPasswordText} */}
       </div>
       <div className='mainContainerCheckPassword_buttons'>
         <Link to='./' className='btn-backHome'>
