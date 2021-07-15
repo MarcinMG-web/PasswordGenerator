@@ -7,7 +7,7 @@ import Box from './components/Box';
 import SavedPasswords from './components/SavedPasswords';
 import CheckPassword from './components/CheckPassword';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <Switch>
