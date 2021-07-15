@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import { addPassword } from '../redux/password/passwordActions';
 
-const Box = () => {
+const Box: React.FC = () => {
   const [password, setPassword] = useState('');
   const [passwordName, setPasswordName] = useState('');
 
@@ -17,11 +17,12 @@ const Box = () => {
 
   const dispatch = useDispatch();
 
-  const chandlerChangePasswordLength = (e) => {
+  const chandlerChangePasswordLength = (e :any) => {
     setPasswordLength(e.target.value);
   };
 
   const settingPassword = () => {
+
     if (includeLetters || includeUppercase || includeNumbers || includeSymbol) {
       let characterList = [];
       if (includeLetters) {
@@ -54,7 +55,7 @@ const Box = () => {
     }
   };
 
-  const createPassword = (characterList) => {
+  const createPassword = (characterList: any) => {
     const min = 0;
     const max = characterList.length - 1;
 
@@ -68,9 +69,9 @@ const Box = () => {
 
   const onClickAddPassword = () => {
     if (
-      (passwordName !== '' || passwordName === 'Set the name password') &&
+      (passwordName !== '') &&
       (password === '' || password !== 'Set the opportunities') &&
-      (password !== '' || password === 'Set the opportunities')
+      (password !== '')
     ) {
       dispatch(
         addPassword({
@@ -80,8 +81,8 @@ const Box = () => {
         })
       );
     } else {
-      setPasswordName('Set the name password');
-      settingPassword('Set the opportunities');
+      setPasswordName('Set the name password')
+      setPassword('Set the opportunities');
     }
   };
 
