@@ -34,7 +34,7 @@ const initialState = {
   selectPasswordArrToRemove: [],
 };
 
-const passwordReducer = (state = initialState, action) => {
+const passwordReducer = (state = initialState, action:any)=> {
   switch (action.type) {
     case ADD_PASSWORD:
       return {

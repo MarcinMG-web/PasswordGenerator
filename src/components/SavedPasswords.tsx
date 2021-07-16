@@ -11,18 +11,18 @@ import {
   deleteSelectedPassword,
 } from '../redux/password/passwordActions';
 
-const SavedPasswords = () => {
+const SavedPasswords: React.FC = () => {
   const [selectAll, setSelectAll] = useState(false);
 
   const dispatch = useDispatch();
 
   const passwordsArr = useSelector(
-    (state) => state.passwordReducer.savedPasswordsArr
+    (state: any) => state.passwordReducer.savedPasswordsArr
   );
 
   const setSelectAllPasswordToDispatch = () => {
     if (selectAll) {
-      dispatch(selectPasswords(passwordsArr.map((el) => el.id)));
+      dispatch(selectPasswords(passwordsArr.map((el: any) => el.id)));
     } else {
       dispatch(clearSelectedPasswords());
     }
@@ -48,7 +48,7 @@ const SavedPasswords = () => {
                   <input
                     type='checkbox'
                     id='checkbox'
-                    value={selectAll}
+                    // value={selectAll}
                     onChange={() => setSelectAll(!selectAll)}
                   />
                   <label htmlFor='checkbox'></label>
@@ -56,7 +56,7 @@ const SavedPasswords = () => {
               </th>
             </tr>
           </thead>
-          {passwordsArr.map((singleEl, index) => (
+          {passwordsArr.map((singleEl: object, index: number) => (
             <SingleEl
               key={index}
               singleEl={singleEl}

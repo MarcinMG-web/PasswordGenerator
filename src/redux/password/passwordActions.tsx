@@ -7,22 +7,22 @@ import {
   DELETE_SELECTED_PASSWORD,
 } from './passwordTypes';
 
-export const addPassword = (payload) => ({
+export const addPassword = (payload:object) => ({
   type: ADD_PASSWORD,
   payload: payload,
 });
 
-export const removePassword = (id) => ({
+export const removePassword = (id:number) => ({
   type: REMOVE_PASSWORD,
   payload: id,
 });
 
-export const updatePassword = (payload) => ({
+export const updatePassword = (payload:object) => ({
   type: UPDATE_PASSWORD,
   payload: payload,
 });
 
-export const selectPasswords = (id) => ({
+export const selectPasswords = (id:number) => ({
   type: SELECT_PASSWORD,
   payload: id,
 });
