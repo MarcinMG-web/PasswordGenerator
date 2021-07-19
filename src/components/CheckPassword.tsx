@@ -12,7 +12,7 @@ const CheckPassword: React.FC = () => {
     strongPasswordText?: string;
   }
 
-  const [typesOfPassword, setTypesOfPassword] = useState<IInitialInfo>( {
+  const [typesOfPassword, setTypesOfPassword] = useState<IInitialInfo>({
     toShortPassword: '',
     easyPasswordText: '',
     mediumPasswordText: '',
@@ -31,7 +31,7 @@ const CheckPassword: React.FC = () => {
     stopSpinner();
   }, [passwordToCheck, timeout]);
 
-  const handleChange = (e:React.FormEvent<HTMLInputElement>):void => {
+  const handleChange = (e: React.FormEvent<HTMLInputElement>): void => {
     setPasswordToCheck(e.currentTarget.value);
     check();
   };
@@ -66,15 +66,15 @@ const CheckPassword: React.FC = () => {
   };
 
   // Check Password
-  const check = ():void => {
+  const check = (): void => {
     timeout = setTimeout(() => checkYourPassword(passwordToCheck), 100);
   };
 
   // Loader
-  const spinner = ():void => {
+  const spinner = (): void => {
     document.getElementById('spinner')!.style.display = 'flex';
   };
-  const stopSpinner = ():void => {
+  const stopSpinner = (): void => {
     const spinnerDelay = () => {
       document.getElementById('spinner')!.style.display = 'none';
     };
