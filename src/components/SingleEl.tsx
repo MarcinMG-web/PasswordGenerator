@@ -6,7 +6,16 @@ import {
   updatePassword,
 } from '../redux/password/passwordActions';
 
-const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
+export interface ISingleEl {
+  key:number
+  singleEl:any
+  index: number
+  isSelectAll: boolean
+  setIsSelectAll: any
+}
+
+const SingleEl:React.FC<ISingleEl> = ({ singleEl, index, isSelectAll, setIsSelectAll }) => {
+  
   const [editTable, setEitTable] = useState(false);
 
   const [editPasswordName, setEditPasswordName] = useState(
@@ -77,7 +86,7 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
 
           <button
             className='btn-remove'
-            onClick={() => dispatch(dispatch(removePassword(singleEl.id)))}
+            onClick={() => dispatch(removePassword(singleEl.id))}
           >
             <span className='icon'>
               <i className='fa fa-remove'></i>
@@ -88,9 +97,8 @@ const SingleEl = ({ singleEl, index, selectAll, setSelectAll }) => {
           <div className='checkbox'>
             <input
               type='checkbox'
-              checked={selectAll}
-              value={selectAll}
-              onChange={() => setSelectAll(!selectAll)}
+              checked={isSelectAll}
+              onChange={() => setIsSelectAll(!isSelectAll)}
             />
             <label htmlFor='checkbox'></label>
           </div>

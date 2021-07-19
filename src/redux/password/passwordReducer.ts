@@ -7,6 +7,17 @@ import {
   DELETE_SELECTED_PASSWORD,
 } from './passwordTypes';
 
+
+
+export interface ISavedPasswordsArrState { 
+  savedPasswordsArr: any[]
+}
+
+export interface ISelectPasswordArrToRemove{
+  selectPasswordArrToRemove: object[]
+}
+
+
 const initialState = {
   savedPasswordsArr: [
     {
@@ -17,7 +28,7 @@ const initialState = {
     {
       passwordName: 'strong password',
       password: 'aUhKoqNtjpwm7Kvjf593Mg#+A',
-      id: 1624701802088,
+      id: 1624701802097,
     },
     {
       passwordName: 'medium password',
@@ -34,7 +45,8 @@ const initialState = {
   selectPasswordArrToRemove: [],
 };
 
-const passwordReducer = (state = initialState, action:any)=> {
+
+const passwordReducer = (state:ISavedPasswordsArrState = initialState, action: any)=> {
   switch (action.type) {
     case ADD_PASSWORD:
       return {

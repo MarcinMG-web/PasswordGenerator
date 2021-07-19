@@ -7,6 +7,36 @@ import {
   DELETE_SELECTED_PASSWORD,
 } from './passwordTypes';
 
+interface IAddPassword {
+  type: string
+  payload: object,
+}
+
+interface IRemovePassword {
+  type: string
+  payload: number,
+}
+
+interface IUpdatePassword {
+  type: string
+  payload: object,
+}
+
+interface ISelectPasswords {
+  type: string,
+  payload: number,
+}
+
+interface IClearSelectedPasswords {
+  type: string,
+}
+
+interface  IDeleteSelectedPassword {
+  type:string
+}
+
+export type Action = IAddPassword | IRemovePassword | IUpdatePassword | ISelectPasswords | IClearSelectedPasswords | IDeleteSelectedPassword
+
 export const addPassword = (payload:object) => ({
   type: ADD_PASSWORD,
   payload: payload,

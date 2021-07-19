@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
+
 import {
   selectPasswords,
   clearSelectedPasswords,
@@ -12,25 +13,26 @@ import {
 } from '../redux/password/passwordActions';
 
 const SavedPasswords: React.FC = () => {
-  const [selectAll, setSelectAll] = useState(false);
+
+  const [isSelectAll, setIsSelectAll] = useState(false);
 
   const dispatch = useDispatch();
 
   const passwordsArr = useSelector(
-    (state: any) => state.passwordReducer.savedPasswordsArr
+    (state:any) => state.passwordReducer.savedPasswordsArr
   );
 
-  const setSelectAllPasswordToDispatch = () => {
-    if (selectAll) {
-      dispatch(selectPasswords(passwordsArr.map((el: any) => el.id)));
+  const setIsSelectAllPasswordToDispatch = () => {
+    if (isSelectAll) {
+      dispatch(selectPasswords(passwordsArr.map((el:any) => el.id)));
     } else {
       dispatch(clearSelectedPasswords());
     }
   };
 
   useEffect(() => {
-    setSelectAllPasswordToDispatch();
-  }, [selectAll]);
+    setIsSelectAllPasswordToDispatch();
+  }, [isSelectAll]);
 
   return (
     <div className='mainContainerSavedPasswords'>
@@ -48,8 +50,7 @@ const SavedPasswords: React.FC = () => {
                   <input
                     type='checkbox'
                     id='checkbox'
-                    // value={selectAll}
-                    onChange={() => setSelectAll(!selectAll)}
+                    onChange={() => setIsSelectAll(!isSelectAll)}
                   />
                   <label htmlFor='checkbox'></label>
                 </div>
@@ -61,8 +62,8 @@ const SavedPasswords: React.FC = () => {
               key={index}
               singleEl={singleEl}
               index={index}
-              selectAll={selectAll}
-              setSelectAll={setSelectAll}
+              isSelectAll={isSelectAll}
+              setIsSelectAll={setIsSelectAll}
             />
           ))}
         </table>
@@ -75,7 +76,7 @@ const SavedPasswords: React.FC = () => {
         <Link to='./checkPassword' className='btn-checkedPassword'>
           Check Your Password
         </Link>
-        {selectAll ? (
+        {isSelectAll ? (
           <button
             className='btn-removeChecked'
             onClick={() => dispatch(deleteSelectedPassword())}
