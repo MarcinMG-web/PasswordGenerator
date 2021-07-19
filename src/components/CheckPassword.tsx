@@ -2,10 +2,17 @@ import React, { useState, useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
-const CheckPassword = () => {
+const CheckPassword: React.FC = () => {
   const [passwordToCheck, setPasswordToCheck] = useState('');
 
-  const initialInfo = {
+  interface IInitialInfo{
+    toShortPassword?: string
+    easyPasswordText?: string
+    mediumPasswordText?: string
+    strongPasswordText?: string
+  }
+
+  const initialInfo:IInitialInfo = {
     toShortPassword: '',
     easyPasswordText: '',
     mediumPasswordText: '',
@@ -26,12 +33,12 @@ const CheckPassword = () => {
     stopSpinner();
   }, [passwordToCheck, timeout]);
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setPasswordToCheck(e.target.value);
     check();
   };
 
-  const checkYourPassword = () => {
+  const checkYourPassword = (passwordToCheck:string):void => {
     let strongPassword = new RegExp(
       '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{12,})'
     );
@@ -67,11 +74,11 @@ const CheckPassword = () => {
 
   // Loader
   const spinner = () => {
-    document.getElementById('spinner').style.display = 'flex';
+    document.getElementById('spinner')!.style.display = 'flex';
   };
   const stopSpinner = () => {
     const spinnerDelay = () => {
-      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('spinner')!.style.display = 'none';
     };
     setTimeout(spinnerDelay, 550);
   };
