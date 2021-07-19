@@ -22,7 +22,7 @@ const SavedPasswords: React.FC = () => {
     (state:any) => state.passwordReducer.savedPasswordsArr
   );
 
-  const setIsSelectAllPasswordToDispatch = () => {
+  const setIsSelectAllPasswordToDispatch = ():void => {
     if (isSelectAll) {
       dispatch(selectPasswords(passwordsArr.map((el:any) => el.id)));
     } else {

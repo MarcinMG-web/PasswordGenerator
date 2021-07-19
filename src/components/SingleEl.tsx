@@ -6,15 +6,15 @@ import {
   updatePassword,
 } from '../redux/password/passwordActions';
 
-export interface ISingleEl {
+export interface SingleElProps {
   key:number
   singleEl:any
   index: number
   isSelectAll: boolean
-  setIsSelectAll: any
+  setIsSelectAll: (isSelectAll: boolean) =>  void
 }
 
-const SingleEl:React.FC<ISingleEl> = ({ singleEl, index, isSelectAll, setIsSelectAll }) => {
+const SingleEl:React.FC<SingleElProps> = ({ singleEl, index, isSelectAll, setIsSelectAll }) => {
   
   const [editTable, setEitTable] = useState(false);
 
