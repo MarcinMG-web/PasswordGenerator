@@ -5,21 +5,19 @@ import { Link } from 'react-router-dom';
 const CheckPassword: React.FC = () => {
   const [passwordToCheck, setPasswordToCheck] = useState('');
 
-  interface IInitialInfo{
-    toShortPassword?: string
-    easyPasswordText?: string
-    mediumPasswordText?: string
-    strongPasswordText?: string
+  interface IInitialInfo {
+    toShortPassword?: string;
+    easyPasswordText?: string;
+    mediumPasswordText?: string;
+    strongPasswordText?: string;
   }
 
-  const initialInfo:IInitialInfo = {
+  const [typesOfPassword, setTypesOfPassword] = useState<IInitialInfo>( {
     toShortPassword: '',
     easyPasswordText: '',
     mediumPasswordText: '',
     strongPasswordText: '',
-  };
-
-  const [typesOfPassword, setTypesOfPassword] = useState(initialInfo);
+  });
 
   const [changeInputPassword, setChangeInputPassword] = useState(true);
 
@@ -33,12 +31,12 @@ const CheckPassword: React.FC = () => {
     stopSpinner();
   }, [passwordToCheck, timeout]);
 
-  const handleChange = (e:any) => {
-    setPasswordToCheck(e.target.value);
+  const handleChange = (e:React.FormEvent<HTMLInputElement>):void => {
+    setPasswordToCheck(e.currentTarget.value);
     check();
   };
 
-  const checkYourPassword = (passwordToCheck:string):void => {
+  const checkYourPassword = (passwordToCheck: string): void => {
     let strongPassword = new RegExp(
       '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{12,})'
     );
@@ -68,15 +66,15 @@ const CheckPassword: React.FC = () => {
   };
 
   // Check Password
-  const check = () => {
+  const check = ():void => {
     timeout = setTimeout(() => checkYourPassword(passwordToCheck), 100);
   };
 
   // Loader
-  const spinner = () => {
+  const spinner = ():void => {
     document.getElementById('spinner')!.style.display = 'flex';
   };
-  const stopSpinner = () => {
+  const stopSpinner = ():void => {
     const spinnerDelay = () => {
       document.getElementById('spinner')!.style.display = 'none';
     };
