@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { Link } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
@@ -17,12 +18,13 @@ const Box: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const chandlerChangePasswordLength = (e :any) => {
-    setPasswordLength(e.target.value);
+  const chandlerChangePasswordLength = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    setPasswordLength(e.target.valueAsNumber);
   };
 
-  const settingPassword = () => {
-
+  const settingPassword = (): void => {
     if (includeLetters || includeUppercase || includeNumbers || includeSymbol) {
       let characterList = [];
       if (includeLetters) {
@@ -67,11 +69,11 @@ const Box: React.FC = () => {
     return password;
   };
 
-  const onClickAddPassword = () => {
+  const onClickAddPassword = ():void => {
     if (
-      (passwordName !== '') &&
+      passwordName !== '' &&
       (password === '' || password !== 'Set the opportunities') &&
-      (password !== '')
+      password !== ''
     ) {
       dispatch(
         addPassword({
@@ -81,7 +83,7 @@ const Box: React.FC = () => {
         })
       );
     } else {
-      setPasswordName('Set the name password')
+      setPasswordName('Set the name password');
       setPassword('Set the opportunities');
     }
   };
