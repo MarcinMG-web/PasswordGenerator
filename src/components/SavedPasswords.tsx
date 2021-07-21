@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-
 import {
   selectPasswords,
   clearSelectedPasswords,
@@ -13,18 +12,17 @@ import {
 } from '../redux/password/passwordActions';
 
 const SavedPasswords: React.FC = () => {
-
   const [isSelectAll, setIsSelectAll] = useState(false);
 
   const dispatch = useDispatch();
 
   const passwordsArr = useSelector(
-    (state:any) => state.passwordReducer.savedPasswordsArr
+    (state: any) => state.passwordReducer.savedPasswordsArr
   );
 
-  const setIsSelectAllPasswordToDispatch = ():void => {
+  const setIsSelectAllPasswordToDispatch = (): void => {
     if (isSelectAll) {
-      dispatch(selectPasswords(passwordsArr.map((el:any) => el.id)));
+      dispatch(selectPasswords(passwordsArr.map((el: any) => el.id)));
     } else {
       dispatch(clearSelectedPasswords());
     }
@@ -57,15 +55,24 @@ const SavedPasswords: React.FC = () => {
               </th>
             </tr>
           </thead>
-          {passwordsArr.map((singleEl: object, index: number) => (
-            <SingleEl
-              key={index}
-              singleEl={singleEl}
-              index={index}
-              isSelectAll={isSelectAll}
-              setIsSelectAll={setIsSelectAll}
-            />
-          ))}
+          {passwordsArr.map(
+            (
+              singleEl: {
+                passwordName: string;
+                password: any;
+                id: number;
+              },
+              index: number
+            ) => (
+              <SingleEl
+                key={index}
+                singleEl={singleEl}
+                index={index}
+                isSelectAll={isSelectAll}
+                setIsSelectAll={setIsSelectAll}
+              />
+            )
+          )}
         </table>
       </div>
 

@@ -7,14 +7,19 @@ import {
 } from '../redux/password/passwordActions';
 
 export interface SingleElProps {
-  key:number
-  singleEl:any
-  index: number
-  isSelectAll: boolean
-  setIsSelectAll: (isSelectAll: boolean) =>  void
+  key: number;
+  singleEl: { passwordName: string; password: any; id: number };
+  index: number;
+  isSelectAll: boolean;
+  setIsSelectAll: (isSelectAll: boolean) => void;
 }
 
-const SingleEl:React.FC<SingleElProps> = ({ singleEl, index, isSelectAll, setIsSelectAll }) => {
+const SingleEl: React.FC<SingleElProps> = ({
+  singleEl,
+  index,
+  isSelectAll,
+  setIsSelectAll,
+}) => {
   
   const [editTable, setEitTable] = useState(false);
 
@@ -25,7 +30,7 @@ const SingleEl:React.FC<SingleElProps> = ({ singleEl, index, isSelectAll, setIsS
 
   const dispatch = useDispatch();
 
-  const onClickUpdate = () => {
+  const onClickUpdate = (): void => {
     setEitTable(!editTable);
     dispatch(
       updatePassword({
@@ -44,7 +49,7 @@ const SingleEl:React.FC<SingleElProps> = ({ singleEl, index, isSelectAll, setIsS
   };
 
   return (
-    <tbody key={singleEl}>
+    <tbody key={singleEl.id}>
       <tr key={singleEl.id}>
         <td>{index + 1}</td>
         {editTable ? (
