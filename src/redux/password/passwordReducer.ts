@@ -7,18 +7,12 @@ import {
   DELETE_SELECTED_PASSWORD,
 } from './passwordTypes';
 
-
-
-export interface ISavedPasswordsArrState { 
-  savedPasswordsArr: any[]
+interface IState {
+  savedPasswordsArr: { passwordName: string; password: any; id: number }[];
+  selectPasswordArrToRemove: object[];
 }
 
-export interface ISelectPasswordArrToRemove{
-  selectPasswordArrToRemove: object[]
-}
-
-
-const initialState = {
+const initialState: IState = {
   savedPasswordsArr: [
     {
       passwordName: 'hard password',
@@ -45,8 +39,7 @@ const initialState = {
   selectPasswordArrToRemove: [],
 };
 
-
-const passwordReducer = (state:ISavedPasswordsArrState = initialState, action: any)=> {
+const passwordReducer = (state: IState = initialState, action: any) => {
   switch (action.type) {
     case ADD_PASSWORD:
       return {
@@ -57,7 +50,7 @@ const passwordReducer = (state:ISavedPasswordsArrState = initialState, action: a
       return {
         ...state,
         savedPasswordsArr: state.savedPasswordsArr.filter(
-          (savedPassword) => savedPassword.id !== action.payload
+          (savedPassword: any) => savedPassword.id !== action.payload
         ),
       };
     case UPDATE_PASSWORD:
