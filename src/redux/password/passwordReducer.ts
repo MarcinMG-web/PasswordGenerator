@@ -1,13 +1,5 @@
-import {
-  ADD_PASSWORD,
-  REMOVE_PASSWORD,
-  UPDATE_PASSWORD,
-  SELECT_PASSWORD,
-  CLEAR_SELECTED_PASSWORD,
-  DELETE_SELECTED_PASSWORD,
-} from './passwordTypes';
-
-import { Action} from './passwordActions'
+import { Action } from './passwordActions';
+import { Types } from './passwordTypes';
 
 interface IState {
   savedPasswordsArr: { passwordName: string; password: any; id: number }[];
@@ -41,7 +33,19 @@ const initialState: IState = {
   selectPasswordArrToRemove: [],
 };
 
-const passwordReducer = (state: IState = initialState, action: Action | any) => {
+const passwordReducer = (
+  state: IState = initialState,
+  action: Action | any
+) => {
+  const {
+    ADD_PASSWORD,
+    REMOVE_PASSWORD,
+    UPDATE_PASSWORD,
+    SELECT_PASSWORD,
+    CLEAR_SELECTED_PASSWORD,
+    DELETE_SELECTED_PASSWORD,
+  } = Types;
+  
   switch (action.type) {
     case ADD_PASSWORD:
       return {
