@@ -1,7 +1,8 @@
 import { Action } from './passwordActions';
 import { Types } from './passwordTypes';
 
-interface IState {
+export interface IState {
+  [x: string]: any;
   savedPasswordsArr: { passwordName: string; password: any; id: number }[];
   selectPasswordArrToRemove: object[];
 }

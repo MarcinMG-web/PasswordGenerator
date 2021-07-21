@@ -11,18 +11,26 @@ import {
   deleteSelectedPassword,
 } from '../redux/password/passwordActions';
 
+import { IState } from '../redux/password/passwordReducer';
+
 const SavedPasswords: React.FC = () => {
   const [isSelectAll, setIsSelectAll] = useState(false);
 
   const dispatch = useDispatch();
 
   const passwordsArr = useSelector(
-    (state: any) => state.passwordReducer.savedPasswordsArr
+    (state: IState) => state.passwordReducer.savedPasswordsArr
   );
 
   const setIsSelectAllPasswordToDispatch = (): void => {
     if (isSelectAll) {
-      dispatch(selectPasswords(passwordsArr.map((el: any) => el.id)));
+      dispatch(
+        selectPasswords(
+          passwordsArr.map(
+            (el: { passwordName: string; password: any; id: number }) => el.id
+          )
+        )
+      );
     } else {
       dispatch(clearSelectedPasswords());
     }
