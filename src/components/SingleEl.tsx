@@ -7,7 +7,6 @@ import {
 } from '../redux/password/passwordActions';
 
 export interface SingleElProps {
-  key: number;
   singleEl: { passwordName: string; password: any; id: number };
   index: number;
   isSelectAll: boolean;
