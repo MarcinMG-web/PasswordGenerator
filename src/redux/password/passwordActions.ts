@@ -8,51 +8,59 @@ import {
 } from './passwordTypes';
 
 interface IAddPassword {
-  type: string
-  payload: object,
+  type: string;
+  payload: object;
 }
 
 interface IRemovePassword {
-  type: string
-  payload: number,
+  type: string;
+  payload: number;
 }
 
 interface IUpdatePassword {
-  type: string
-  payload: object,
+  type: string;
+  payload: object;
 }
 
 interface ISelectPasswords {
-  type: string,
-  payload: number,
+  type: string;
+  payload: number;
 }
 
 interface IClearSelectedPasswords {
-  type: string,
+  type: string;
+  payload: number;
 }
 
-interface  IDeleteSelectedPassword {
-  type:string
+interface IDeleteSelectedPassword {
+  type: string;
+  payload: number;
 }
 
-export type Action = IAddPassword | IRemovePassword | IUpdatePassword | ISelectPasswords | IClearSelectedPasswords | IDeleteSelectedPassword
+export type Action =
+  | IAddPassword
+  | IRemovePassword
+  | IUpdatePassword
+  | ISelectPasswords
+  | IClearSelectedPasswords
+  | IDeleteSelectedPassword;
 
-export const addPassword = (payload:object) => ({
+export const addPassword = (payload: object) => ({
   type: ADD_PASSWORD,
   payload: payload,
 });
 
-export const removePassword = (id:number) => ({
+export const removePassword = (id: number) => ({
   type: REMOVE_PASSWORD,
   payload: id,
 });
 
-export const updatePassword = (payload:object) => ({
+export const updatePassword = (payload: object) => ({
   type: UPDATE_PASSWORD,
   payload: payload,
 });
 
-export const selectPasswords = (id:number) => ({
+export const selectPasswords = (id: number) => ({
   type: SELECT_PASSWORD,
   payload: id,
 });
