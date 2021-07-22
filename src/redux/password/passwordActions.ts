@@ -1,40 +1,31 @@
-import {
-  ADD_PASSWORD,
-  REMOVE_PASSWORD,
-  UPDATE_PASSWORD,
-  SELECT_PASSWORD,
-  CLEAR_SELECTED_PASSWORD,
-  DELETE_SELECTED_PASSWORD,
-} from './passwordTypes';
+import { Types } from './passwordTypes';
 
 interface IAddPassword {
-  type: string;
+  type: Types.ADD_PASSWORD;
   payload: object;
 }
 
 interface IRemovePassword {
-  type: string;
+  type: Types.REMOVE_PASSWORD;
   payload: number;
 }
 
 interface IUpdatePassword {
-  type: string;
+  type: Types.UPDATE_PASSWORD;
   payload: object;
 }
 
 interface ISelectPasswords {
-  type: string;
+  type: Types.SELECT_PASSWORD;
   payload: number;
 }
 
 interface IClearSelectedPasswords {
-  type: string;
-  payload: number;
+  type: Types.CLEAR_SELECTED_PASSWORD;
 }
 
 interface IDeleteSelectedPassword {
-  type: string;
-  payload: number;
+  type: Types.DELETE_SELECTED_PASSWORD;
 }
 
 export type Action =
@@ -45,30 +36,30 @@ export type Action =
   | IClearSelectedPasswords
   | IDeleteSelectedPassword;
 
-export const addPassword = (payload: object) => ({
-  type: ADD_PASSWORD,
+export const addPassword = (payload: object): IAddPassword => ({
+  type: Types.ADD_PASSWORD,
   payload: payload,
 });
 
-export const removePassword = (id: number) => ({
-  type: REMOVE_PASSWORD,
+export const removePassword = (id: number): IRemovePassword => ({
+  type: Types.REMOVE_PASSWORD,
   payload: id,
 });
 
-export const updatePassword = (payload: object) => ({
-  type: UPDATE_PASSWORD,
+export const updatePassword = (payload: object): IUpdatePassword => ({
+  type: Types.UPDATE_PASSWORD,
   payload: payload,
 });
 
-export const selectPasswords = (id: number) => ({
-  type: SELECT_PASSWORD,
+export const selectPasswords = (id: number): ISelectPasswords => ({
+  type: Types.SELECT_PASSWORD,
   payload: id,
 });
 
-export const clearSelectedPasswords = () => ({
-  type: CLEAR_SELECTED_PASSWORD,
+export const clearSelectedPasswords = (): IClearSelectedPasswords => ({
+  type: Types.CLEAR_SELECTED_PASSWORD,
 });
 
-export const deleteSelectedPassword = () => ({
-  type: DELETE_SELECTED_PASSWORD,
+export const deleteSelectedPassword = (): IDeleteSelectedPassword => ({
+  type: Types.DELETE_SELECTED_PASSWORD,
 });

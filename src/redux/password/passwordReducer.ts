@@ -34,19 +34,19 @@ const initialState: IState = {
   selectPasswordArrToRemove: [],
 };
 
+const {
+  ADD_PASSWORD,
+  REMOVE_PASSWORD,
+  UPDATE_PASSWORD,
+  SELECT_PASSWORD,
+  CLEAR_SELECTED_PASSWORD,
+  DELETE_SELECTED_PASSWORD,
+} = Types;
+
 const passwordReducer = (
   state: IState = initialState,
   action: Action | any
 ) => {
-  const {
-    ADD_PASSWORD,
-    REMOVE_PASSWORD,
-    UPDATE_PASSWORD,
-    SELECT_PASSWORD,
-    CLEAR_SELECTED_PASSWORD,
-    DELETE_SELECTED_PASSWORD,
-  } = Types;
-  
   switch (action.type) {
     case ADD_PASSWORD:
       return {
@@ -106,3 +106,4 @@ const passwordReducer = (
 };
 
 export default passwordReducer;
+
