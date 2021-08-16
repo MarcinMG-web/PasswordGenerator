@@ -57,7 +57,7 @@ const Box: React.FC = () => {
     }
   };
 
-  const createPassword = (characterList: any) => {
+  const createPassword = (characterList: any):string => {
     const min = 0;
     const max = characterList.length - 1;
 
