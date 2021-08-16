@@ -110,6 +110,7 @@ const Box: React.FC = () => {
           <label className='checkBoxContainer_label-switch'>
             <input
               type='checkbox'
+              name='includeLetters'
               checked={includeLetters}
               onChange={(e) => setIncludeLetters(e.target.checked)}
               className='checkBox-input'
