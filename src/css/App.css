@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Prata&family=Rokkitt:wght@100;400&display=swap");
-.btn, .btn-removeChecked, .btn-backHome, .btn-checkedPassword, .btn-tableSavePassword, .btn-savePassword, .btn-create {
+.btn, .btn-create, .btn-savePassword, .btn-tableSavePassword, .btn-checkedPassword, .btn-backHome, .btn-removeChecked {
   color: #fff;
   background-color: inherit;
   outline: none;
@@ -14,6 +14,7 @@
   border: 1px #43b472 solid;
   width: 100px;
 }
+
 .btn-create:hover {
   background-color: #21a361;
   color: #000;
@@ -22,6 +23,7 @@
 .btn-savePassword {
   border: 1px #43b4ae solid;
 }
+
 .btn-savePassword:hover {
   background-color: #43b4ae;
   color: #000;
@@ -32,6 +34,7 @@
   text-decoration: none;
   padding: 10px;
 }
+
 .btn-tableSavePassword:hover {
   background-color: #d13131;
   color: #000;
@@ -42,6 +45,7 @@
   text-decoration: none;
   padding: 10px;
 }
+
 .btn-checkedPassword:hover {
   background-color: #f1b202;
   color: #000;
@@ -52,6 +56,7 @@
   text-decoration: none;
   padding: 10px;
 }
+
 .btn-backHome:hover {
   background-color: #a6d131;
   color: #000;
@@ -62,12 +67,13 @@
   text-decoration: none;
   padding: 10px;
 }
+
 .btn-removeChecked:hover {
   background-color: #fc0101;
   color: #000;
 }
 
-.btn-icon, .btn-remove, .btn-edit {
+.btn-icon, .btn-edit, .btn-remove {
   outline: none;
   cursor: pointer;
   border: 0;
@@ -103,6 +109,7 @@
   height: 24px;
   /* Hide default checkbox */
 }
+
 .checkBoxContainer_label-switch-switch input {
   opacity: 0;
   width: 0;
@@ -118,18 +125,17 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+
 .slider::before {
   position: absolute;
-  content: "";
+  content: '';
   height: 16px;
   width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: #fff;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -142,8 +148,6 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
@@ -151,6 +155,7 @@ input:checked + .slider:before {
 .slider.round {
   border-radius: 34px;
 }
+
 .slider.round::before {
   border-radius: 50%;
 }
@@ -162,22 +167,27 @@ input:checked + .slider:before {
   justify-content: center;
   flex-direction: column;
 }
+
 .range-slider-label {
   margin: 10px;
 }
+
 .range-slider-result {
   font-size: 20px;
   color: #f30909;
 }
+
 .range-slider::before, .range-slider::after {
   position: absolute;
   color: #fff;
   font-size: 0.9rem;
 }
+
 .range-slider::before {
   content: attr(data-min);
   left: 10px;
 }
+
 .range-slider::after {
   content: attr(data-max);
   right: 10px;
@@ -189,18 +199,21 @@ input:checked + .slider:before {
   position: relative;
   display: block;
 }
-.checkbox input[type=checkbox] {
+
+.checkbox input[type='checkbox'] {
   width: auto;
-  opacity: 1e-8;
+  opacity: 0.00000001;
   position: absolute;
   left: 0;
   margin-left: -20px;
 }
+
 .checkbox label {
   position: relative;
 }
+
 .checkbox label::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -211,14 +224,14 @@ input:checked + .slider:before {
   border-radius: 3px;
   border: 2px solid #7bbe72;
 }
+
 .checkbox label::after {
-  content: "";
+  content: '';
   display: block;
   width: 10px;
   height: 5px;
   border-bottom: 2px solid #7bbe72;
   border-left: 2px solid #7bbe72;
-  -webkit-transform: rotate(-45deg) scale(0);
   transform: rotate(-45deg) scale(0);
   transition: transform ease 0.25s;
   will-change: transform;
@@ -226,13 +239,15 @@ input:checked + .slider:before {
   top: 12px;
   left: 10px;
 }
-.checkbox input[type=checkbox]:checked ~ label::before {
+
+.checkbox input[type='checkbox']:checked ~ label::before {
   color: #7bbe72;
 }
-.checkbox input[type=checkbox]:checked ~ label::after {
-  -webkit-transform: rotate(-45deg) scale(1);
+
+.checkbox input[type='checkbox']:checked ~ label::after {
   transform: rotate(-45deg) scale(1);
 }
+
 .checkbox label {
   min-height: 34px;
   display: block;
@@ -241,13 +256,14 @@ input:checked + .slider:before {
   font-weight: normal;
   cursor: pointer;
 }
+
 .checkbox span {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.checkbox input[type=checkbox]:focus + label::before {
+
+.checkbox input[type='checkbox']:focus + label::before {
   outline: 0;
 }
 
@@ -266,41 +282,13 @@ input:checked + .slider:before {
   border-radius: 50%;
   position: relative;
   text-indent: -9999em;
-  -webkit-animation: load 1.1s infinite ease;
   animation: load 1.1s infinite ease;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
   transform: translateZ(0);
 }
 
-@-webkit-keyframes load {
-  0%, 100% {
-    box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
-  }
-  12.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.7), 1.8em -1.8em 0 0em #ffffff, 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5);
-  }
-  25% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.5), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7), 2.5em 0em 0 0em #ffffff, 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  37.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.5), 2.5em 0em 0 0em rgba(255, 255, 255, 0.7), 1.75em 1.75em 0 0em #ffffff, 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.5), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.7), 0em 2.5em 0 0em #ffffff, -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  62.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.5), 0em 2.5em 0 0em rgba(255, 255, 255, 0.7), -1.8em 1.8em 0 0em #ffffff, -2.6em 0em 0 0em rgba(255, 255, 255, 0.2), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  75% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.5), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.7), -2.6em 0em 0 0em #ffffff, -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2);
-  }
-  87.5% {
-    box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
-  }
-}
 @keyframes load {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0em -2.6em 0em 0em #ffffff, 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.2), -2.6em 0em 0 0em rgba(255, 255, 255, 0.5), -1.8em -1.8em 0 0em rgba(255, 255, 255, 0.7);
   }
   12.5% {
@@ -325,6 +313,7 @@ input:checked + .slider:before {
     box-shadow: 0em -2.6em 0em 0em rgba(255, 255, 255, 0.2), 1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2), 2.5em 0em 0 0em rgba(255, 255, 255, 0.2), 1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2), 0em 2.5em 0 0em rgba(255, 255, 255, 0.2), -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5), -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
 .header {
   margin: 20px;
   padding: 10px;
@@ -339,6 +328,7 @@ input:checked + .slider:before {
   color: #fff;
   border-radius: 25px;
 }
+
 .mainContainer_generatePassword {
   display: flex;
   align-items: center;
@@ -354,6 +344,7 @@ input:checked + .slider:before {
   border: 1px #43b472 solid;
   border-radius: 25px;
 }
+
 .mainContainer_seating {
   flex-direction: row;
   align-items: center;
@@ -365,15 +356,18 @@ input:checked + .slider:before {
   border: 1px, solid, black;
   font-size: 24px;
 }
+
 .mainContainer_savePassword {
   display: flex;
   flex-direction: column;
   padding: 5px;
 }
+
 .mainContainer_savePassword-name {
   color: green;
   padding: 5px;
 }
+
 .mainContainer_savePassword-name-textInput_green {
   width: 100%;
   background: transparent;
@@ -383,6 +377,7 @@ input:checked + .slider:before {
   outline: unset;
   text-align: center;
 }
+
 .mainContainer_savePassword-name-textInput_red {
   width: 100%;
   background: transparent;
@@ -392,10 +387,12 @@ input:checked + .slider:before {
   outline: unset;
   text-align: center;
 }
+
 .mainContainer_savePassword-password {
   color: red;
   padding: 5px;
 }
+
 .mainContainer_button {
   display: flex;
   flex-direction: row;
@@ -418,6 +415,7 @@ input:checked + .slider:before {
   padding: 10px;
   margin: 10px;
 }
+
 .checkBoxContainer_label {
   font-size: 20px;
 }
@@ -430,10 +428,12 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: space-between;
 }
+
 .mainContainerSavedPasswords-text {
   color: chartreuse;
   font-size: 44px;
 }
+
 .mainContainerSavedPasswords-tableBox {
   margin: 20px;
   padding: 10px;
@@ -443,25 +443,31 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: center;
 }
+
 .mainContainerSavedPasswords-tableBox-table,
 .mainContainerSavedPasswords-tableBox th,
 .mainContainerSavedPasswords-tableBox td {
   width: 100vw;
 }
+
 .mainContainerSavedPasswords-tableBox th {
   color: red;
 }
+
 .mainContainerSavedPasswords-tableBox tr:hover {
   color: #f5a003;
 }
+
 .mainContainerSavedPasswords-tableBox .actionIcon {
   cursor: pointer;
   opacity: 0;
 }
+
 .mainContainerSavedPasswords-tableBox .actionIcon:hover {
   opacity: 1;
   cursor: pointer;
 }
+
 .mainContainerSavedPasswords-tableBox .inputEditPassword {
   background: transparent;
   color: #fff;
@@ -480,19 +486,23 @@ input:checked + .slider:before {
   align-items: center;
   justify-content: space-between;
 }
+
 .mainContainerCheckPasswords_text {
   color: #f1b202;
   font-size: 44px;
   margin-top: 10px;
 }
+
 .mainContainerCheckPasswords_spinier {
   width: 100px;
   height: 100px;
 }
+
 .mainContainerCheckPasswords_resolveInformationAboutPassword {
   width: 320px;
   height: 45px;
 }
+
 .mainContainerCheckPasswords_button {
   display: flex;
   flex-direction: row;
@@ -511,16 +521,17 @@ input:checked + .slider:before {
   border-radius: 5px;
   outline: none;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rokkitt", serif;
+  font-family: 'Rokkitt', serif;
   font-size: 25px;
 }
 
 body {
-  font-family: "Rokkitt", serif;
+  font-family: 'Rokkitt', serif;
   background-color: #282c34;
   display: flex;
   justify-content: center;

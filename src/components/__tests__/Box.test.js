@@ -68,11 +68,47 @@ describe('Box tests', () => {
     expect(inputYourNamePassword).toBeInTheDocument();
   });
 
-   it('should render input Your generated password:', async () => {
-     render(<MockBox />);
+  it('should render input Your generated password:', async () => {
+    render(<MockBox />);
 
-     const inputYourGeneratedPassword= screen.getByText('Your generated password:');
+    const inputYourGeneratedPassword = screen.getByText(
+      'Your generated password:'
+    );
 
-     expect(inputYourGeneratedPassword).toBeInTheDocument();
-   });
+    expect(inputYourGeneratedPassword).toBeInTheDocument();
+  });
+
+  it('should render button Created:', async () => {
+    render(<MockBox />);
+
+    const buttonCreated = screen.getByRole('button', { name: 'Create' });
+
+    expect(buttonCreated).toBeInTheDocument();
+  });
+
+  it('should render button Save password:', async () => {
+    render(<MockBox />);
+
+    const buttonSavePassword = screen.getByRole('button', { name: 'Save password' });
+
+    expect(buttonSavePassword).toBeInTheDocument();
+  });
+
+  it('should render link Move to the save password:', async () => {
+    render(<MockBox />);
+
+    const linkMoveToTheSavePassword = screen.getByText(
+      'Move to the save password'
+    );
+
+    expect(linkMoveToTheSavePassword).toBeInTheDocument();
+  });
+
+  it('should render link Check Your Password:', async () => {
+    render(<MockBox />);
+
+    const linkCheckYourPassword = screen.getByText('Check Your Password');
+
+    expect(linkCheckYourPassword).toBeInTheDocument();
+  });
 });

@@ -5,6 +5,7 @@
   color: #fff;
   border-radius: 25px;
 }
+
 .mainContainer_generatePassword {
   display: flex;
   align-items: center;
@@ -20,6 +21,7 @@
   border: 1px #43b472 solid;
   border-radius: 25px;
 }
+
 .mainContainer_seating {
   flex-direction: row;
   align-items: center;
@@ -31,15 +33,18 @@
   border: 1px, solid, black;
   font-size: 24px;
 }
+
 .mainContainer_savePassword {
   display: flex;
   flex-direction: column;
   padding: 5px;
 }
+
 .mainContainer_savePassword-name {
   color: green;
   padding: 5px;
 }
+
 .mainContainer_savePassword-name-textInput_green {
   width: 100%;
   background: transparent;
@@ -49,6 +54,7 @@
   outline: unset;
   text-align: center;
 }
+
 .mainContainer_savePassword-name-textInput_red {
   width: 100%;
   background: transparent;
@@ -58,10 +64,12 @@
   outline: unset;
   text-align: center;
 }
+
 .mainContainer_savePassword-password {
   color: red;
   padding: 5px;
 }
+
 .mainContainer_button {
   display: flex;
   flex-direction: row;
@@ -84,6 +92,7 @@
   padding: 10px;
   margin: 10px;
 }
+
 .checkBoxContainer_label {
   font-size: 20px;
 }
