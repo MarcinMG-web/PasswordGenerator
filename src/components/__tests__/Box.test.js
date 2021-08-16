@@ -59,4 +59,20 @@ describe('Box tests', () => {
 
     expect(inputIncludeSymbols).toBeInTheDocument();
   });
+
+  it('should render input Your name password:', async () => {
+    render(<MockBox />);
+
+    const inputYourNamePassword = screen.getByText('Your name password:');
+
+    expect(inputYourNamePassword).toBeInTheDocument();
+  });
+
+   it('should render input Your generated password:', async () => {
+     render(<MockBox />);
+
+     const inputYourGeneratedPassword= screen.getByText('Your generated password:');
+
+     expect(inputYourGeneratedPassword).toBeInTheDocument();
+   });
 });
