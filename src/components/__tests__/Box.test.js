@@ -127,4 +127,20 @@ describe('Box tests - action', () => {
 
     expect(textAfterClick).toBeInTheDocument();
   });
+
+  it('action after click Save password button', () => {
+    render(<MockBox />);
+
+    const buttonCreated = screen.getByRole('button', { name: 'Create' });
+
+    fireEvent.click(buttonCreated);
+
+    const buttonSavePassword = screen.getByRole('button', { name: 'Save password' });
+
+    fireEvent.click(buttonSavePassword);
+
+    const textAfterClick = screen.getByText('Set the opportunities');
+
+    expect(textAfterClick).toBeInTheDocument();
+  });
 });
