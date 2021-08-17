@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import Box from '../Box';
 import store from '../../redux/store';
@@ -15,7 +15,7 @@ const MockBox = () => {
   );
 };
 
-describe('Box tests', () => {
+describe('Box tests - layout', () => {
   it('render without crashing box', async () => {
     render(<MockBox />);
   });
@@ -89,7 +89,9 @@ describe('Box tests', () => {
   it('should render button Save password:', async () => {
     render(<MockBox />);
 
-    const buttonSavePassword = screen.getByRole('button', { name: 'Save password' });
+    const buttonSavePassword = screen.getByRole('button', {
+      name: 'Save password',
+    });
 
     expect(buttonSavePassword).toBeInTheDocument();
   });
@@ -110,5 +112,19 @@ describe('Box tests', () => {
     const linkCheckYourPassword = screen.getByText('Check Your Password');
 
     expect(linkCheckYourPassword).toBeInTheDocument();
+  });
+});
+
+describe('Box tests - action', () => {
+  it('action after click Create button', () => {
+    render(<MockBox />);
+
+    const buttonCreated = screen.getByRole('button', { name: 'Create' });
+
+    fireEvent.click(buttonCreated);
+
+    const textAfterClick = screen.getByText('Set the opportunities');
+
+    expect(textAfterClick).toBeInTheDocument();
   });
 });
