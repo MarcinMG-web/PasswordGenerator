@@ -135,7 +135,9 @@ describe('Box tests - action', () => {
 
     fireEvent.click(buttonCreated);
 
-    const buttonSavePassword = screen.getByRole('button', { name: 'Save password' });
+    const buttonSavePassword = screen.getByRole('button', {
+      name: 'Save password',
+    });
 
     fireEvent.click(buttonSavePassword);
 

@@ -114,6 +114,7 @@ const Box: React.FC = () => {
               checked={includeLetters}
               onChange={(e) => setIncludeLetters(e.target.checked)}
               className='checkBox-input'
+              data-testid='letter-test'
             />
             <span className='slider round'></span>
           </label>
