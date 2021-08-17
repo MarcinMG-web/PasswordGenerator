@@ -119,7 +119,7 @@ const CheckPassword: React.FC = () => {
       </div>
 
       <div className='mainContainerCheckPasswords_spinier'>
-        <div id='spinner' className='loading'>
+        <div id='spinner' className='loading' data-testid='spinner-test'>
           Loading...
         </div>
       </div>

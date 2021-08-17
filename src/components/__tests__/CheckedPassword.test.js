@@ -5,7 +5,7 @@ import store from '../../redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-const MockBox = () => {
+const MockCheckPassword = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -17,8 +17,30 @@ const MockBox = () => {
 
 describe('Check password tests - layout', () => {
   it('render without crashing box', async () => {
-    render(<MockBox />);
+    render(<MockCheckPassword />);
   });
 
-  
-})
+  it('render input to check password', async () => {
+    render(<MockCheckPassword />);
+
+    const checkPasswordInput = screen.getByPlaceholderText('Check here...');
+
+    expect(checkPasswordInput).toBeInTheDocument();
+  });
+
+  it('render spinier', async () => {
+    render(<MockCheckPassword />);
+
+    const spinner = screen.getByTestId('spinner-test');
+
+    expect(spinner).toBeInTheDocument();
+  });
+
+  it('render link back', async () => {
+    render(<MockCheckPassword />);
+
+    const linkBack = screen.getByText('Back');
+
+    expect(linkBack).toBeInTheDocument();
+  });
+});
