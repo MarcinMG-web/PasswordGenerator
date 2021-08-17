@@ -143,4 +143,28 @@ describe('Box tests - action', () => {
 
     expect(textAfterClick).toBeInTheDocument();
   });
+
+  it('render 14 after change input range on 14', () => {
+    render(<MockBox />);
+
+    const rangeInput = screen.getByTestId('range-test');
+
+    fireEvent.change(rangeInput, { target: { value: '14' } });
+
+    const textAfterChange = screen.queryByText('14');
+
+    expect(textAfterChange).toBeInTheDocument();
+  });
+
+  it('render 44 is not 70 after change input range on 44', () => {
+    render(<MockBox />);
+
+    const rangeInput = screen.getByTestId('range-test');
+
+    fireEvent.change(rangeInput, { target: { value: '44' } });
+
+    const textAfterChange = screen.queryByText('70');
+
+    expect(textAfterChange).not.toBeInTheDocument();
+  });
 });

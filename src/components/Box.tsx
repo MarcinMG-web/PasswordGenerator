@@ -57,7 +57,7 @@ const Box: React.FC = () => {
     }
   };
 
-  const createPassword = (characterList: any):string => {
+  const createPassword = (characterList: any): string => {
     const min = 0;
     const max = characterList.length - 1;
 
@@ -69,7 +69,7 @@ const Box: React.FC = () => {
     return password;
   };
 
-  const onClickAddPassword = ():void => {
+  const onClickAddPassword = (): void => {
     if (
       passwordName !== '' &&
       (password === '' || password !== 'Set the opportunities') &&
@@ -101,6 +101,7 @@ const Box: React.FC = () => {
             max='32'
             value={passwordLength}
             onChange={chandlerChangePasswordLength}
+            data-testid='range-test'
           />
           <div className='range-slider-result'>{passwordLength}</div>
         </div>
