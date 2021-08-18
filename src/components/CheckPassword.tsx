@@ -125,15 +125,23 @@ const CheckPassword: React.FC = () => {
       </div>
 
       <div className='mainContainerCheckPasswords_resolveInformationAboutPassword'>
-        <p style={{ color: 'red' }}>{typesOfPassword.toShortPassword}</p>
+  
+          <>
+            <p style={{ color: 'red' }} data-testid='shortPassword-test'>
+              {typesOfPassword.toShortPassword}
+            </p>
 
-        <p style={{ color: 'red' }}>{typesOfPassword.easyPasswordText}</p>
+            <p style={{ color: 'red' }}>{typesOfPassword.easyPasswordText}</p>
 
-        <p style={{ color: 'orange' }}>{typesOfPassword.mediumPasswordText}</p>
+            <p style={{ color: 'orange' }}>
+              {typesOfPassword.mediumPasswordText}
+            </p>
 
-        <p style={{ color: 'chartreuse' }}>
-          {typesOfPassword.strongPasswordText}
-        </p>
+            <p style={{ color: 'chartreuse' }}>
+              {typesOfPassword.strongPasswordText}
+            </p>
+          </>
+    
       </div>
       <div className='mainContainerCheckPassword_buttons'>
         <Link to='./' className='btn-backHome'>

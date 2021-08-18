@@ -44,3 +44,17 @@ describe('Check password tests - layout', () => {
     expect(linkBack).toBeInTheDocument();
   });
 });
+
+describe('Check password tests - action', () => { 
+  it('render massage element - p after too short password', async () => {
+    render(<MockCheckPassword />);
+
+    const checkPasswordInput = screen.getByPlaceholderText('Check here...');
+    fireEvent.change(checkPasswordInput, { target: { value: '123' } });
+
+    const renderText = await screen.findAllByTestId(/shortPassword-test/i);
+    
+    expect(renderText.length).toBe(1);
+  });
+
+})
